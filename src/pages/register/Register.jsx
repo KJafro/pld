@@ -13,7 +13,7 @@ export default function Register() {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post("https://everydaybeing.onrender.com/api/auth/register", {
+      const res = await axios.post("https://everydaybeing.onrender.com/auth/register", {
         username, 
         email, 
         password
