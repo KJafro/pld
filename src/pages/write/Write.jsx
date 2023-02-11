@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./write.css"
-import axios from "axios"
+import { axiosInstance } from "../../config";
 import { Context } from './../../context/Context';
 import { useContext } from "react";
 
@@ -24,14 +24,14 @@ export default function Write() {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("https://everydaybeing.onrender.com/upload", data);
+        await axiosInstance.post("/upload", data);
       } catch (err) {
 
       }
     }
     try {
-      const res = await axios.post("https://everydaybeing.onrender.com/posts", newPost);
-      window.location.replace("https://everydaybeing.onrender.com/post/" + res.data._id);
+      const res = await axiosInstance.post("/posts", newPost);
+      window.location.replace("/post/" + res.data._id);
     } catch (err) {
 
     }
