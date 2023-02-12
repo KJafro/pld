@@ -27,4 +27,5 @@
     height: 450px;
     margin-top: 80px;
     object-fit: cover;
+    background: url(../../../img.jpg);
 }

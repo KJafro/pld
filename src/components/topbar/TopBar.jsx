@@ -15,8 +15,8 @@ export default function TopBar() {
       <div className="topLeft">
         <i className="topIcon fab fa-facebook-square"></i>
         <i className="topIcon fab fa-twitter-square"></i>
-        <i className="topIcon fab fa-pinterest-square"></i>
-        <i className="topIcon fab fa-instagram-square"></i>
+        <Link to="https://open.spotify.com/show/5ZLCIJR0FHZLIREjPoTACy/"><i class="topIcon fa-brands fa-spotify"></i></Link>
+        <Link to="https://instagram.com/everyday.being?igshid=YmMyMTA2M2Y="><i className="topIcon fab fa-instagram-square"></i></Link>
       </div>
       <div className="topCenter">
         <ul className="topList">
