@@ -33,7 +33,7 @@ export default function Write() {
     }
     try {
       const res = await axiosInstance.post("/posts", newPost);
-      window.location.replace("https://everydaybeing.onrender.com/api/post/" + res.data._id);
+      window.location.replace("https://everydaybeingfront.onrender.com/post/" + res.data._id);
     } catch (err) {
 
     }
