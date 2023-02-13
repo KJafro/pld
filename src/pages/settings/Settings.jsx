@@ -90,7 +90,7 @@ export default function Settings() {
             <span
               style={{ color: "green", textAlign: "center", marginTop: "20px" }}
             >
-              Profile has been updated...
+              Profile has been updated!
             </span>
           )}
         </form>
