@@ -20,7 +20,7 @@ export default function Post({post}) {
             <span className="postTitle">{post.title}</span>
             </Link>
         <hr />
-        <span className="postDate">{new Date(post.createdAt).format('DD MMM')}</span>
+        <span className="postDate">{new Date(post.createdAt).toUTCString()}</span>
         </div>
         <p className="postDesc">{post.desc}</p>
     </div>
