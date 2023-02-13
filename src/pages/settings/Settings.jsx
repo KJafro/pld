@@ -23,16 +23,16 @@ export default function Settings() {
       email,
       password,
     };
-    if (file) {
-      const data = new FormData();
-      const filename = Date.now() + file.name;
-      data.append("name", filename);
-      data.append("file", file);
-      updatedUser.profilePic = filename;
-      try {
-        await axiosInstance.post("/upload", data);
-      } catch (err) {}
-    }
+    // if (file) {
+    //   const data = new FormData();
+    //   const filename = Date.now() + file.name;
+    //   data.append("name", filename);
+    //   data.append("file", file);
+    //   updatedUser.profilePic = filename;
+    //   try {
+    //     await axiosInstance.post("/upload", data);
+    //   } catch (err) {}
+    // }
     try {
       const res = await axiosInstance.put("/users/" + user._id, updatedUser);
       setSuccess(true);
