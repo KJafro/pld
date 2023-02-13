@@ -6,7 +6,8 @@ export default function Post({post}) {
   return (
     <div className="post">
       {post.photo && (
-        <img class="postImg" src={PF + post.photo} alt="" />
+        // <img class="postImg" src={PF + post.photo/} alt="" />
+        <img class="postImg" src={post.photo} alt="" />
       )}
         <div className="postInfo">
             <div className="postCats">{
@@ -22,7 +23,6 @@ export default function Post({post}) {
         <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
         </div>
         <p className="postDesc">{post.desc}</p>
-        <p className="postDesc"><img src={post.photo} alt="" /></p>
     </div>
   )
 }
