@@ -7,6 +7,7 @@ import { useContext } from "react";
 export default function Write() {
   const [title, setTitle] = useState("")
   const [desc, setDesc] = useState("")
+  const [photo, setPhoto] = useState("")
   const [file, setFile] = useState(null)
   const { user } = useContext(Context)
 
@@ -16,6 +17,7 @@ export default function Write() {
       username: user.username,
       title,
       desc,
+      photo
     };
     if (file) {
       const data = new FormData();
@@ -48,6 +50,7 @@ export default function Write() {
                 <input type="file" id="fileInput" style={{display: "none"}} onChange={e=> setFile(e.target.files[0])}/>
                 <input type="text" placeholder="Title" className="writeInput" autoFocus={true} onChange={e=>setTitle(e.target.value)}/>
             </div>
+            <div><input type="text" onChange={e=>setPhoto(e.target.value)}/></div>
             <div className="writeFormGroup">
                 <textarea placeholder="Tell your story..." type="text" className="writeInput writeText" onChange={e=>setDesc(e.target.value)}></textarea>
             </div>
