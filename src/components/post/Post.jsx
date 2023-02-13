@@ -21,6 +21,7 @@ export default function Post({post}) {
             </Link>
         <hr />
         <span className="postDate">{new Date(post.createdAt).toDateString().format( 'MMMM Do YYYY, h:mm:ss a')}</span>
+
         </div>
         <p className="postDesc">{post.desc}</p>
     </div>
