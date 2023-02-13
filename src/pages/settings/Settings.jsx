@@ -22,18 +22,17 @@ export default function Settings() {
       username,
       email,
       password,
-      profilePic
     };
-    // if (file) {
-    //   const data = new FormData();
-    //   const filename = Date.now() + file.name;
-    //   data.append("name", filename);
-    //   data.append("file", file);
-    //   updatedUser.profilePic = filename;
-    //   try {
-    //     await axiosInstance.post("/upload", data);
-    //   } catch (err) {}
-    // }
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("name", filename);
+      data.append("file", file);
+      updatedUser.profilePic = filename;
+      try {
+        await axiosInstance.post("/upload", data);
+      } catch (err) {}
+    }
     try {
       const res = await axiosInstance.put("/users/" + user._id, updatedUser);
       setSuccess(true);
@@ -78,10 +77,10 @@ export default function Settings() {
             placeholder={user.email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <label>PROFILE PIC</label>
+          <label>Password</label>
           <input
             type="password"
-            onChange={(e) => setprofilePic(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button className="settingsSubmit" type="submit">
             Update
@@ -90,7 +89,7 @@ export default function Settings() {
             <span
               style={{ color: "green", textAlign: "center", marginTop: "20px" }}
             >
-              Profile has been updated!
+              Profile has been updated...
             </span>
           )}
         </form>
