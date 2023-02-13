@@ -22,6 +22,7 @@ export default function Settings() {
       username,
       email,
       password,
+      profilePic
     };
     // if (file) {
     //   const data = new FormData();
@@ -77,10 +78,10 @@ export default function Settings() {
             placeholder={user.email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <label>Password</label>
+          <label>PROFILE PIC</label>
           <input
             type="password"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setprofilePic(e.target.value)}
           />
           <button className="settingsSubmit" type="submit">
             Update
