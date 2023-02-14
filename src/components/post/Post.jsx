@@ -1,7 +1,10 @@
 import "./post.css"
 import {Link} from "react-router-dom"
 
+
 export default function Post({post}) {
+  let moment = require ('moment');
+
   const PF = "http://localhost:5000/images/"
   return (
     <div className="post">
@@ -20,7 +23,7 @@ export default function Post({post}) {
             <span className="postTitle">{post.title}</span>
             </Link>
         <hr />
-        <span className="postDate">{new Date(post.createdAt).toUTCString()}</span>
+        <span className="postDate">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
         </div>
         <p className="postDesc">{post.desc}</p>
     </div>
