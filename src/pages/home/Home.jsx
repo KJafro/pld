@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axiosInstance.get("/posts" + search)
-      setPosts(res.data)
+      setPosts(res.data.reverse())
     }
     fetchPosts()
   },[search])
