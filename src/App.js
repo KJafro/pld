@@ -6,7 +6,7 @@ import Settings from "./pages/settings/Settings"
 import Login from "./pages/login/Login"
 import Register from "./pages/register/Register"
 import About from "./pages/about/About"
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 import { useContext } from 'react';
 import { Context } from "./context/Context"
 
@@ -14,7 +14,7 @@ import { Context } from "./context/Context"
 function App() {
   const { user } = useContext(Context);
   return (
-<Router> 
+<HashRouter> 
     <TopBar />
         <Routes>
           <Route exact path="/" element={<Home/>} />
@@ -25,7 +25,7 @@ function App() {
           <Route path="/post/:postId" element={<Single/>} />
           <Route exact path="/about" element={<About/>} />
         </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
