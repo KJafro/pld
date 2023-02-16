@@ -3,6 +3,10 @@ import { Link } from "react-router-dom"
 
 export default function Success() {
   return (
-    <div>ok</div>
+    <div className="container">
+        <div className="successtxt">
+            <h2>POST SUCCESSFULLY ADDED!</h2>
+        </div>
+    </div>
   )
 }

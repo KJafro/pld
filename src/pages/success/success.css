@@ -1,0 +1,15 @@
+.container {
+    border: 2px solid blue;
+}
+
+.successtxt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    height: 500px;
+}
+
+.successtxt h2 {
+    color: rgb(6, 177, 6);
+}
