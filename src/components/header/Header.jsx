@@ -3,11 +3,13 @@ import "./header.css"
 export default function Header() {
   return (
     <div className="header">
-        <div className="headerTitles">
+        {/* <div className="headerTitles">
             <span className="headerTitleSm">React & Node</span>
             <span className="headerTitleLg">Blog</span>
+        </div> */}
+        <div className="undertext">
+        <img className ="headerImg" alt=""/>
         </div>
-        <img className ="headerImg" alt="" />
     </div>
   )
 }
