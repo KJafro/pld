@@ -18,7 +18,7 @@
     background-size: cover;
     background-position: center;
 
-    background-image: url(../../../public/assets/rain.jpg);
+    background-image: url(../../../public/assets/img6.jpg);
     animation-name: animate;
     animation-timing-function: ease-in-out;
     animation-duration: 20s;
@@ -37,7 +37,7 @@
         background-image: url(../../../public/assets/img5.jpg);
     }
     75%{
-        background-image: url(../../../public/assets/rain.jpg);
+        background-image: url(../../../public/assets/img6.jpg);
     }
     100%{
         background-image: url(../../../public/assets/img3.jpg);
