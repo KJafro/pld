@@ -1,7 +1,6 @@
 import "./success.css"
 import { Link } from "react-router-dom"
 import { Oval } from "react-loader-spinner"
-import { Pulse } from "react-awesome-reveal"
 import 'animate.css';
 
 export default function Success() {
