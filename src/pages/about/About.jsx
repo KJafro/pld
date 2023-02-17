@@ -5,9 +5,7 @@ export default function About() {
   return (
     <>
     <TopBar />
-    <Hinge>
     <h1>okoooooooooooooo</h1>
-    </Hinge>
     </>
   )
   
