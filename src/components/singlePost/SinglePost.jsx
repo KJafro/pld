@@ -41,13 +41,12 @@ export default function SinglePost() {
       await axiosInstance.put(`/posts/${post._id}`, {
        username: user.username,
        title:title,
-       desc,
+       desc
       });
       //IF WANT TO RELOAD PAGE
       // window.location.reload();
       setUpdateMode(false)
     } catch (err) {
-
     }
   }
 
@@ -85,6 +84,9 @@ export default function SinglePost() {
             (<p className="singlePostDesc">
               {desc}
             </p>)}
+
+         
+            
             {updateMode && (
             <button className="singlePostButton" onClick={handleUpdate}>Update</button>
             )}

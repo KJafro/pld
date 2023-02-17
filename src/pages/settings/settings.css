@@ -1,5 +1,7 @@
 .settings {
     display: flex;
+    padding-top: 32px;
+    font-family: Lora;
 }
 
 .settingsWrapper {
@@ -13,10 +15,14 @@
     justify-content: space-between;
 }
 
-.settingsUpdateTitle {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: lightcoral;
+.settingsTitle h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.settingsForm h2 {
+    text-align: center;
+    margin-top: 25px;
 }
 
 .settingsDeleteTitle {
@@ -25,15 +31,50 @@
     cursor: pointer;
 }
 
+.errortxt {
+    color: red;
+    font-size: 14px;
+}
+
 .settingsForm {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.settingsForm input {
+    width: 50vw;
+    justify-content: center;
+    font-size: 22px;
+    border: none;
+    padding: 10px;
+    width: 50vw;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-family: "Lora";
+}
+
+.settingsForm input:focus {
+    outline: 2px solid rgb(65, 126, 196);
 }
 
 .settingsPP {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.settingsPP input {
+    color: gray;
     margin: 10px 0;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+}
+
+.pp {
+margin: auto;
 }
 
 .settingsPP > img {
@@ -56,9 +97,15 @@
     cursor: pointer;
 }
 
-.settingsForm > label {
+/* .settingsForm > label {
     font-size: 20px;
     margin-top: 20px;
+} */
+
+.settingslbl {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .settingsForm > input {

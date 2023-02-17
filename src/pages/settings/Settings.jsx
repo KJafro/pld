@@ -2,26 +2,34 @@ import "./settings.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
-import { axiosInstance } from "../../config";
+import axios from "axios";
+import { axiosInstance } from "../../config"
+import TopBar from "../../components/topbar/TopBar";
 
 export default function Settings() {
   const [file, setFile] = useState(null);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [profilePic, setprofilePic] = useState("")
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false)
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images"
+  const PF = "http://localhost:5000/images/"
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(username.length==0||email.length==0||password.length==0){
+      setError(true)
+    }
     dispatch({ type: "UPDATE_START" });
     const updatedUser = {
       userId: user._id,
       username,
       email,
       password,
+      profilePic
     };
     if (file) {
       const data = new FormData();
@@ -42,59 +50,64 @@ export default function Settings() {
     }
   };
   return (
+    <>
+    <TopBar/>
     <div className="settings">
       <div className="settingsWrapper">
         <div className="settingsTitle">
-          <span className="settingsUpdateTitle">Update Your Account</span>
-          <span className="settingsDeleteTitle">Delete Account</span>
+          <h1 className="settingsUpdateTitle">Update Account</h1>
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
-          <label>Profile Picture</label>
           <div className="settingsPP">
-            <img src={user.profilePic}
-              // src={file ? URL.createObjectURL(file) : PF+user.profilePic}
-              alt=""
+            <img
+              src={user.profilePic}
+              alt="" className="pp"
             />
-            <label htmlFor="fileInput">
+            <label className="settingslbl">Profile Picture</label>
+            <input type="text" placeholder="Image URL" onChange={e=>setprofilePic(e.target.value)}/>
+            
+            {/* <label htmlFor="fileInput">
               <i className="settingsPPIcon far fa-user-circle"></i>
-            </label>
-            <input
+            </label> */}
+            {/* <input
               type="file"
               id="fileInput"
               style={{ display: "none" }}
               onChange={(e) => setFile(e.target.files[0])}
-            />
+            /> */}
           </div>
-          <label>Username</label>
+          <label className="settingslbl">Username</label>
           <input
             type="text"
             placeholder={user.username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <label>Email</label>
+          <label className="settingslbl">Email</label>
           <input
             type="email"
             placeholder={user.email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <label>Password</label>
+          <label className="settingslbl">Password</label>
           <input
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
+                   {error?
+          <label className="errortxt">Please fill all available fields</label>:""}
           <button className="settingsSubmit" type="submit">
             Update
           </button>
           {success && (
             <span
-              style={{ color: "green", textAlign: "center", marginTop: "20px" }}
+              style={{ color: "green", textAlign: "center", marginTop: "20px", fontSize: "20px" }}
             >
-              Profile has been updated...
+              Profile has been updated!
             </span>
           )}
         </form>
       </div>
-      <Sidebar />
     </div>
+    </>
   );
 }

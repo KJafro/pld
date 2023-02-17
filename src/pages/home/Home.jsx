@@ -5,6 +5,7 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import "./home.css"
 import { axiosInstance } from "../../config"
 import { useLocation } from "react-router"
+import TopBar from "../../components/topbar/TopBar"
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -19,10 +20,10 @@ export default function Home() {
   },[search])
   return (
     <>
+    <TopBar/>
       <Header />
       <div className="home">
         <Posts posts={posts}/>
-        <Sidebar />
       </div>
     </>
   );

@@ -1,6 +1,11 @@
 .post {
-    width: 380px;
+    width: 500px;
     margin: 0px 25px 40px 25px;
+    cursor: pointer;
+}
+
+.post:hover {
+    opacity: 0.85;
 }
 
 .postImg {

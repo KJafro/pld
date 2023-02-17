@@ -3,6 +3,7 @@ import "./write.css"
 import { axiosInstance } from "../../config";
 import { Context } from './../../context/Context';
 import { useContext } from "react";
+import TopBar from "../../components/topbar/TopBar"
 
 export default function Write() {
   const [title, setTitle] = useState("")
@@ -40,23 +41,27 @@ export default function Write() {
     }
   };
   return (
+    <>
+    <TopBar/>
     <div className="write">
+      <h1>Create Blog Post</h1>
       {file && <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
       }
         <form className="writeForm" onSubmit={handleSubmit}>
             <div className="writeFormGroup">
                 <label htmlFor="fileInput">
-                <i className="writeIcon fa-sharp fa-solid fa-plus"></i>
+                {/* <i className="writeIcon fa-sharp fa-solid fa-plus"></i> */}
                 </label>
-                <input type="file" id="fileInput" style={{display: "none"}} onChange={e=> setFile(e.target.files[0])}/>
+                {/* <input type="file" id="fileInput" style={{display: "none"}} onChange={e=> setFile(e.target.files[0])}/> */}
                 <input type="text" placeholder="Title" className="writeInput" autoFocus={true} onChange={e=>setTitle(e.target.value)}/>
             </div>
-            <div><input type="text" onChange={e=>setPhoto(e.target.value)}/></div>
             <div className="writeFormGroup">
-                <textarea placeholder="Tell your story..." type="text" className="writeInput writeText" onChange={e=>setDesc(e.target.value)}></textarea>
+            <input type="text" className ="writeInput" placeholder="Image Link" onChange={e=>setPhoto(e.target.value)}/>
+                <textarea placeholder="Write your post..." type="text" className="writeInput writeText" onChange={e=>setDesc(e.target.value)}></textarea>
+                <button className="writeSubmit" type="submit">Submit</button>
             </div>
-            <button className="writeSubmit" type="submit">Publish</button>
+            
         </form>
-    </div>
+    </div></>
   )
 }

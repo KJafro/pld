@@ -1,9 +1,12 @@
 .singlePost {
     flex: 9;
+    width: 1500px;
+    margin: auto;
 }
 
 .singlePostWrapper {
     padding: 20px;
+    margin-left: 100px;
     padding-right: 0;
     display: flex;
     flex-direction: column;
