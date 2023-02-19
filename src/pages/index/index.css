@@ -1,3 +1,7 @@
+  .container {
+    background-color: rgb(89, 88, 88);
+    height: 100vh;
+  }
 
   .video-bg {
     background-position: center;
@@ -8,6 +12,7 @@
     display: block;
     position: relative;
   }
+  
 
   .caption {
     position: absolute;
