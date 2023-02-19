@@ -6,7 +6,7 @@ export default function Index() {
   
   return (<>
         <div className="container">
-  
+        <div className="video-bg"><video src={BgVideo} autoPlay={true} controls={false} muted playsInline class="video-bg" type="video/mp4"/>
         <div className="caption">
               <h1>Everyday Being</h1>
               <p>We live our lives in a continuous now. You cannot go even two seconds into the past
@@ -16,7 +16,7 @@ export default function Index() {
               <Link to="/construct"><button className="podcastbtn" type="submit">Podcast</button></Link>
         </div>
         </div>
-        
+        </div>
         </>
   )
 }
