@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./topbar.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faTwitter, faSpotify, faInstagram } from "@fortawesome/free-brands-svg-icons"
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
@@ -13,10 +15,10 @@ export default function TopBar() {
   return (
     <div className="top">
       <div className="topLeft">
-        <i className="topIcon fab fa-facebook-square"></i>
-        <i className="topIcon fab fa-twitter-square"></i>
-        <Link to="https://open.spotify.com/show/5ZLCIJR0FHZLIREjPoTACy/"><i class="topIcon fa-brands fa-spotify"></i></Link>
-        <Link to="https://instagram.com/everyday.being?igshid=YmMyMTA2M2Y="><i className="topIcon fab fa-instagram-square"></i></Link>
+      <FontAwesomeIcon icon={faFacebook} className="topIcon"></FontAwesomeIcon>
+        <FontAwesomeIcon icon={faTwitter} className="topIcon"></FontAwesomeIcon>
+        <Link to="https://open.spotify.com/show/5ZLCIJR0FHZLIREjPoTACy/"><FontAwesomeIcon icon={faSpotify} className="topIcon"></FontAwesomeIcon></Link>
+        <Link to="https://instagram.com/everyday.being?igshid=YmMyMTA2M2Y="><FontAwesomeIcon icon={faInstagram} className="topIcon"></FontAwesomeIcon></Link>
       </div>
       <div className="topCenter">
         <ul className="topList">

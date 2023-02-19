@@ -1,5 +1,7 @@
 import './construct.css'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faTwitter, faSpotify, faInstagram } from "@fortawesome/free-brands-svg-icons"
 
 export default function Construct() {
 
@@ -21,21 +23,22 @@ export default function Construct() {
 
   return (
     <>
-    <meta http-equiv="refresh" content="3;url=http://localhost:3000/" />
+    {/* <meta http-equiv="refresh" content="3;url=http://localhost:3000/" /> */}
     <div className="backgroundcon">
 
     </div>
     <div className="containercon">
+        
         <h1 className='h1con'>UNDER CONSTRUCTION</h1>
         <h3>PROGRESS</h3>
         <div className="progress-wrapper">
             <div className="progress"><span className='spanprogress'>0%</span></div>
         </div>
         <div className="social-icons">
-        <i className="Icon fab fa-facebook-square"></i>
-        <i className="Icon fab fa-twitter-square"></i>
-        <Link to="https://open.spotify.com/show/5ZLCIJR0FHZLIREjPoTACy/"><i class="Icon fa-brands fa-spotify"></i></Link>
-        <Link to="https://instagram.com/everyday.being?igshid=YmMyMTA2M2Y="><i className="Icon fab fa-instagram-square"></i></Link>
+        <FontAwesomeIcon icon={faFacebook} className="Icon"></FontAwesomeIcon>
+        <FontAwesomeIcon icon={faTwitter} className="Icon"></FontAwesomeIcon>
+        <Link to="https://open.spotify.com/show/5ZLCIJR0FHZLIREjPoTACy/"><FontAwesomeIcon icon={faSpotify} className="Icon"></FontAwesomeIcon></Link>
+        <Link to="https://instagram.com/everyday.being?igshid=YmMyMTA2M2Y="><FontAwesomeIcon icon={faInstagram} className="Icon"></FontAwesomeIcon></Link>
         </div>
     </div></>
   )
