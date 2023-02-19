@@ -45,7 +45,7 @@
   padding: 8px;
   cursor: pointer;
   color: white;
-  background: linear-gradient(45deg, rgb(79, 189, 151), rgb(29, 179, 119));
+  background: linear-gradient(45deg, rgb(59, 124, 178), rgb(36, 110, 213));
   width: 80px;
   border-radius: 5px;
   font-weight: bold;
@@ -56,7 +56,7 @@
 }
 
 .podcastbtn:hover {
-  background: linear-gradient(45deg, rgb(92, 212, 122), rgb(123, 175, 135));
+  background: linear-gradient(45deg, rgb(35, 128, 204), rgb(85, 118, 166));
 }
 
 
