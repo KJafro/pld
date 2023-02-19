@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 export default function Index() {
   return (<>
         <div className="container">
-        <div className="video-bg"><video src={BgVideo} autoPlay class="video-bg" />
+        <div className="video-bg"><video src={BgVideo} autoPlay muted playsInline class="video-bg" />
         <div className="caption">
               <h1>Everyday Being</h1>
               <p>We live our lives in a continuous now. You cannot go even two seconds into the past
