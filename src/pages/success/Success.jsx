@@ -1,13 +1,14 @@
 import "./success.css"
 import { Link } from "react-router-dom"
 import { Oval } from "react-loader-spinner"
+import 'animate.css';
 
 export default function Success() {
   return (
     
     <div className="container">
         <div className="successtxt">
-            <h2>POST SUCCESSFULLY ADDED!</h2>
+            <h2 class="animate__animated animate__fadeInDown">POST SUCCESSFULLY ADDED!</h2>
             <Oval
             height={70}
             width={70}
