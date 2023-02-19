@@ -5,7 +5,7 @@ import { axiosInstance } from "../../config"
 import TopBar from "../../components/topbar/TopBar";
 
 export default function Settings() {
-  // const [file, setFile] = useState(null);
+  const [file, setFile] = useState(null);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
