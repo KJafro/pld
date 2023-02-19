@@ -3,6 +3,9 @@ import BgVideo from "./../index/index.mp4"
 import {Link} from "react-router-dom";
 
 export default function Index() {
+  var mobilevideo = document.getElementsByTagName("video")[0];
+  mobilevideo.setAttribute("playsinline", "");
+  mobilevideo.setAttribute("muted", "");
   return (<>
         <div className="container">
         <div className="video-bg"><video src={BgVideo} autoPlay muted playsInline class="video-bg" />
