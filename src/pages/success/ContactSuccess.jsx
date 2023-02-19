@@ -1,5 +1,4 @@
 import "./success.css"
-import { Link } from "react-router-dom"
 import { Oval } from "react-loader-spinner"
 import 'animate.css';
 

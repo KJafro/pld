@@ -1,7 +1,6 @@
 import "./singlePost.css"
 import { axiosInstance } from "../../config"
 import { useLocation } from "react-router-dom"
-import Sidebar from "../../components/sidebar/Sidebar"
 import { useEffect, useState, useContext } from "react"
 import { Context } from "../../context/Context";
 import {Link} from "react-router-dom"
@@ -10,7 +9,7 @@ export default function SinglePost() {
   const location = useLocation()
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({})
-  const PF = "https://localhost:5000/images/";
+  // const PF = "https://localhost:5000/images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("")
   const [desc, setDesc] = useState("")

@@ -1,13 +1,11 @@
 import "./settings.css";
-import Sidebar from "../../components/sidebar/Sidebar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
-import axios from "axios";
 import { axiosInstance } from "../../config"
 import TopBar from "../../components/topbar/TopBar";
 
 export default function Settings() {
-  const [file, setFile] = useState(null);
+  // const [file, setFile] = useState(null);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,11 +14,11 @@ export default function Settings() {
   const [error, setError] = useState(false)
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/"
+  // const PF = "http://localhost:5000/images/"
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(username.length==0||email.length==0||password.length==0){
+    if(username.length===0||email.length===0||password.length===0){
       setError(true)
     }
     dispatch({ type: "UPDATE_START" });

@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 export default function Post({post}) {
   let moment = require ('moment');
 
-  const PF = "http://localhost:5000/images/"
+  // const PF = "http://localhost:5000/images/"
   return (
     <div className="post">
       {post.photo && (
