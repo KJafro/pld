@@ -21,7 +21,7 @@ export default function ContactSuccess() {
             strokeWidth={2}
             strokeWidthSecondary={2}
             />
-            {/* <meta http-equiv="refresh" content="3;url=https://everydaybeingfront.onrender.com" /> */}
+            <meta http-equiv="refresh" content="3;url=https://everydaybeingfront.onrender.com" />
         </div>
     </div>
     

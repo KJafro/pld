@@ -33,16 +33,17 @@
 
 .writeInput {
     font-size: 22px;
-    border: none;
     padding: 10px;
     width: 50vw;
     border-radius: 20px;
     margin-top: 10px;
     font-family: "Lora";
+    border: 2px solid rgb(14, 14, 14);
+    outline: none;
 }
 
 .writeInput:focus {
-    outline: 2px solid rgb(65, 126, 196);
+    border: 2px solid rgb(45, 98, 164);
 }
 
 
@@ -69,7 +70,7 @@
 }
 
 .writeSubmit:hover {
-    background-image: linear-gradient(to left, rgb(68, 150, 150) , teal);
+    background-image: linear-gradient(to left, rgb(6, 168, 168) , rgb(88, 154, 154));
 }
 
 .writeImg {
