@@ -15,7 +15,6 @@ export default function Index() {
               <Link to="/construct"><button className="podcastbtn" type="submit">Podcast</button></Link>
         </div>
         </div>
-        </div>
         </>
   )
 }
