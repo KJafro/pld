@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./topbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faTwitter, faSpotify, faInstagram } from "@fortawesome/free-brands-svg-icons"
+import { faFacebook, faTwitter, faSpotify, faInstagram, faInstagramSquare } from "@fortawesome/free-brands-svg-icons"
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);

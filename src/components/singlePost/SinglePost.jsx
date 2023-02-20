@@ -29,6 +29,7 @@ export default function SinglePost() {
     try {
       await axiosInstance.delete(`/posts/${post._id}`, {
       data: { username: user.username },});
+      window.location.replace("/blog");
     } catch (err) {
 
     }
