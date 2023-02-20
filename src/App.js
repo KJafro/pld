@@ -8,7 +8,7 @@ import Register from "./pages/register/Register"
 import About from "./pages/about/About"
 import Success from "./pages/success/Success"
 import ContactSuccess from "./pages/success/ContactSuccess"
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useContext } from 'react';
 import { Context } from "./context/Context"
 import Contact from './pages/contact/Contact';
@@ -19,7 +19,7 @@ function App() {
   const { user } = useContext(Context);
 
   return (
-<HashRouter> 
+<BrowserRouter> 
         <Routes>
           <Route exact path="/" element={<Index/>} />
           <Route exact path="/blog" element={<Home/>} />
@@ -34,7 +34,7 @@ function App() {
           <Route exact path="/contact" element={<Contact/>} />
           <Route exact path="/contactsuccess" element={<ContactSuccess/>} />
         </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
