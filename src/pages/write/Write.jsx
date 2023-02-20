@@ -11,9 +11,13 @@ export default function Write() {
   const [photo, setPhoto] = useState("")
   const [file, setFile] = useState(null)
   const { user } = useContext(Context)
+  const [error, setError] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(title.length===0||desc.length===0||photo.length===0){
+      setError(true)
+    }
     const newPost = {
       username: user.username,
       title,
@@ -59,6 +63,8 @@ export default function Write() {
             <input type="text" className ="writeInput" placeholder="Image Link" onChange={e=>setPhoto(e.target.value)}/>
                 <textarea placeholder="Write your post..." type="text" className="writeInput writeText" onChange={e=>setDesc(e.target.value)}></textarea>
                 <button className="writeSubmit" type="submit">Submit</button>
+                {error?
+          <label className="errortxt">Please fill all available fields</label>:""}
             </div>
             
         </form>
