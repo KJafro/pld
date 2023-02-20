@@ -29,7 +29,7 @@ export default function SinglePost() {
     try {
       await axiosInstance.delete(`/posts/${post._id}`, {
       data: { username: user.username },});
-      window.location.replace("/#/blog");
+      window.location.replace("/");
     } catch (err) {
 
     }
@@ -73,7 +73,7 @@ export default function SinglePost() {
             }
             <div className="singlePostInfo">
                 <span className="singlePostAuthor">Author: 
-                <Link to={`/?user=${post.username}`} className="link">
+                <Link to={`/api/?user=${post.username}`} className="link">
                   <b>{post.username}</b>
                   </Link>
                 </span>

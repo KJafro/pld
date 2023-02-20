@@ -44,7 +44,7 @@ export default function Register() {
         <button className="registerLoginButton">
         <Link className="link" to="/login">Login</Link>
         </button>
-        {error && <span style={{color: "red", marginTop:"10px"}}>Something went wrong!!!</span>}
+        {error && <span style={{color: "red", marginTop:"10px"}}>Please fill in all fields!</span>}
     </div>
   )
 }
