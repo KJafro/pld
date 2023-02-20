@@ -38,9 +38,13 @@
     padding: 10px;
 }
 
+.loginButton:hover {
+    background-color: rgb(63, 187, 187);
+}
+
 .loginButton:disabled {
     cursor: not-allowed;
-    background-color: rgb(52, 135, 135);
+    background-color: rgb(87, 199, 199);
 }
 
 .loginRegisterButton {
@@ -54,4 +58,3 @@
     color: white;
     border-radius: 10px;
 }
-

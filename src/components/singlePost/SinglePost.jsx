@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom"
 import { useEffect, useState, useContext } from "react"
 import { Context } from "../../context/Context";
 import {Link} from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
 
 export default function SinglePost() {
   const location = useLocation()
@@ -29,7 +31,7 @@ export default function SinglePost() {
     try {
       await axiosInstance.delete(`/posts/${post._id}`, {
       data: { username: user.username },});
-      window.location.replace("/blog");
+      window.location.replace("/#/blog");
     } catch (err) {
 
     }
@@ -64,8 +66,8 @@ export default function SinglePost() {
               {title}
               {post.username === user?.username && (
             <div className="singlePostEdit">
-            <i className="singlePostIcon fa-regular fa-pen-to-square" onClick={() => setUpdateMode(true)}></i>
-            <i class="singlePostIcon fa-solid fa-trash" onClick={handleDelete}></i>
+            <FontAwesomeIcon icon={faEdit} className="singlePostIcon" onClick={() => setUpdateMode(true)}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faTrash} className="singlePostIcon" onClick={handleDelete}></FontAwesomeIcon>
             </div>
 )}
             </h1>
@@ -73,7 +75,7 @@ export default function SinglePost() {
             }
             <div className="singlePostInfo">
                 <span className="singlePostAuthor">Author: 
-                <Link to={`/?user=${post.username}`} className="link">
+                <Link to={`/${post.username}`} className="link">
                    <b>{post.username}</b>
                   </Link>
                 </span>

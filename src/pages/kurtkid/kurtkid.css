@@ -1,0 +1,57 @@
+.usercontainer {
+    text-align: center;
+    font-family: Lora;
+    background-color: rgb(192, 211, 223);
+    height: 94vh;
+}
+
+.userpp {
+    text-align: center;
+}
+
+.userpic {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.username {
+    font-size: 22px;
+    margin-top: 10px;
+    display: block;
+}
+
+.underline {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.undtxt {
+    text-align: center;
+    max-width: 40em;
+    margin: auto;
+}
+
+.contactme {
+    width: 150px;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(58, 90, 159);
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contactme:hover {
+    background-color: rgb(31, 58, 126);
+}
+
+.userhr {
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+}

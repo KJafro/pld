@@ -38,6 +38,10 @@
     padding: 10px;
 }
 
+.registerButton:hover {
+    background-color: rgb(63, 187, 187);
+}
+
 .registerLoginButton {
     position: absolute;
     top: 60px;

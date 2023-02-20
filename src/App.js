@@ -6,6 +6,7 @@ import Settings from "./pages/settings/Settings"
 import Login from "./pages/login/Login"
 import Register from "./pages/register/Register"
 import About from "./pages/about/About"
+import KurtKid from "./pages/kurtkid/KurtKid";
 import Success from "./pages/success/Success"
 import ContactSuccess from "./pages/success/ContactSuccess"
 import { HashRouter, Routes, Route } from "react-router-dom";
@@ -22,6 +23,7 @@ function App() {
 <HashRouter> 
         <Routes>
           <Route exact path="/" element={<Index/>} />
+          <Route exact path="/KurtKid" element={<KurtKid/>} />
           <Route exact path="/blog" element={<Home/>} />
           <Route exact path="/construct" element={<Construct/>} />
           <Route path="/register" element={user ? <Home /> : <Register/>} />
