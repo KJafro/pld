@@ -22,6 +22,14 @@
     color: white;
     font-weight: bold;
     font-family: Lora;
+    animation: caption;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes caption {
+0% {top: 20%}
+100% {top: 50%}
 }
 
 .caption h1 {
@@ -42,7 +50,17 @@
   width: 80px;
   border-radius: 5px;
   font-weight: bold;
+  opacity: 0;
+  animation-name: blogbtn;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
+
+@keyframes blogbtn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+  }
 
 .podcastbtn {
   margin-top: 10px;
@@ -53,7 +71,18 @@
   width: 80px;
   border-radius: 5px;
   font-weight: bold;
+  opacity: 0;
+  animation-name: podcastbtn;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
+
+@keyframes podcastbtn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+  }
+
 
 .blogbtn:hover {
   background: linear-gradient(45deg, rgb(35, 128, 204), rgb(85, 118, 166));
