@@ -2,15 +2,15 @@ import "./post.css"
 import {Link} from "react-router-dom"
 import { Fade } from "react-awesome-reveal";
 
-export default function Post({post}) {
+export default function Podcast({podcast}) {
   let moment = require ('moment');
 
   // const PF = "http://localhost:5000/images/"
   return (
 <div className="postFront">
-      {post.photo && (
+      {podcast.videoPodcast && (
         // <img class="postImg" src={PF + post.photo/} alt="" />
-        <Link to = {`/post/${post._id}`} className="link"><img class="postImg" src={post.photo} alt="" /></Link>
+        <Link to = {`/podcast/${podcast._id}`} className="link"><img class="postImg" src={podcast.videoPodcast} alt="" /></Link>
       )}
         <div className="postInfo">
             {/* <div className="postCats">{
@@ -19,13 +19,13 @@ export default function Post({post}) {
               ))
             }
             // </div> */}
-            <Link to = {`/post/${post._id}`} className="link">
-            <span className="postTitle">{post.title}
+            <Link to = {`/podcast/${podcast._id}`} className="link">
+            <span className="postTitle">{podcast.titlePodcast}
             </span>
             </Link>
-        <span className="postDate">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
+        <span className="postDate">{moment(podcast.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
         </div>
-        <p className="postDesc">{post.desc}</p>
+        <p className="postDesc">{podcast.descPodcast}</p>
     </div>
   )
 }

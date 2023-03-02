@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Header from "../../components/header/Header"
-import Posts from "../../components/posts/Posts"
+import Podcasts from "../../components/podcasts/Podcasts"
 import "./home.css"
 import { axiosInstance } from "../../config"
 import { useLocation } from "react-router"
@@ -8,24 +8,24 @@ import TopBar from "../../components/topbar/TopBar"
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Everyday Being | Blog"
+    document.title = "Everyday Being | Podcasts"
   }, []);
-  const [posts, setPosts] = useState([]);
+  const [podcasts, setPodcasts] = useState([]);
   const {search} = useLocation();
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const res = await axiosInstance.get("/posts" + search)
-      setPosts(res.data.reverse())
+    const fetchPodcasts = async () => {
+      const res = await axiosInstance.get("/podcasts" + search)
+      setPodcasts(res.data.reverse())
     }
-    fetchPosts()
+    fetchPodcasts()
   },[search])
   return (
     <>
     <TopBar/>
       <Header />
       <div className="home">
-        <Posts posts={posts}/>
+        <Podcasts podcasts={podcasts}/>
       </div>
     </>
   );

@@ -1,4 +1,6 @@
-
+html {
+    background-color: rgb(213, 213, 218);
+}
 
 .home {
     display: flex;

@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./write.css"
 import { axiosInstance } from "../../config";
 import { Context } from './../../context/Context';
 import { useContext } from "react";
 import TopBar from "../../components/topbar/TopBar"
+import Modal from "../../components/modal/Modal"
+import { FaQuestion } from "react-icons/fa"
 
 export default function Write() {
   const [title, setTitle] = useState("")
@@ -12,9 +14,15 @@ export default function Write() {
   const [file, setFile] = useState(null)
   const { user } = useContext(Context)
   const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    document.title = "Everyday Being | Create Post"
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     if(title.length===0||desc.length===0||photo.length===0){
       setError(true)
     }
@@ -39,20 +47,23 @@ export default function Write() {
     try {
       const res = await axiosInstance.post("/posts", newPost);
       // window.location.replace("https://everydaybeingfront.onrender.com/post/" + res.data._id);
-      window.location.replace("https://everydaybeingfront.onrender.com/#/success/");
+      window.location.replace("/success/");
     } catch (err) {
-
+      setLoading(false)
     }
   };
   return (
     <>
     <TopBar/>
+    <div className="writeContainer">
+      <div className="right">
     <div className="write">
-      <h1>Create Blog Post</h1>
+      <h1 className="h1Write">Create Post</h1>
       {file && <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
       }
         <form className="writeForm" onSubmit={handleSubmit}>
             <div className="writeFormGroup">
+            <Modal/>
                 <label htmlFor="fileInput">
                 {/* <i className="writeIcon fa-sharp fa-solid fa-plus"></i> */}
                 </label>
@@ -62,12 +73,14 @@ export default function Write() {
             <div className="writeFormGroup">
             <input type="text" className ="writeInput" placeholder="Image Link" onChange={e=>setPhoto(e.target.value)}/>
                 <textarea placeholder="Write your post..." type="text" className="writeInput writeText" onChange={e=>setDesc(e.target.value)}></textarea>
-                <button className="writeSubmit" type="submit">Submit</button>
+                <button className="writeSubmit" type="submit">{loading ? ("Adding Post...") : "Submit"}</button>
                 {error?
-          <label className="errortxt">Please fill all available fields</label>:""}
+          <label className="errortxt" style={{ color: "red", textAlign: "center", marginTop: "20px", fontSize: "20px" }}>Please fill all available fields</label>:""}
             </div>
-            
         </form>
-    </div></>
+    </div>
+    </div>
+    </div>
+    </>
   )
 }

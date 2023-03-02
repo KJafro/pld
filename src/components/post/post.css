@@ -1,24 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .post {
+    width: auto;
+    cursor: pointer;
+    overflow: hidden
+}
+
+.postFront {
     width: 500px;
     margin: 0px 25px 40px 25px;
     cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px 2px grey;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
 }
 
-.post:hover {
+
+.postFront:hover {
     opacity: 0.85;
+
 }
 
 .postImg {
     width: 100%;
     height: 280px;
     object-fit: cover;
-    border-radius: 7px;
 }
 
 .postInfo {
+    margin-top: -3px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(246, 246, 255);
 }
 
 .postCat {
@@ -43,19 +73,83 @@
     font-family: 'Lora', serif;
     font-style: italic;
     font-size: 13px;
-    color: #999;
-    margin-top: 15px;
+    color: #2e2e2e;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .postDesc {
     font-family: 'Varela Round', sans-serif;
+    height: 50px;
+    padding-left: 5px;
     font-size: 14px;
     color: #444;
     line-height: 24px;
-    margin-top: 15px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    background-color: rgb(246, 246, 255);
 }
+
+@media screen and (max-width: 850px) {
+    .postFront {
+      width: 100%;
+      margin: auto;
+      margin-bottom: 50px;
+      margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 851px) and (max-width: 1100px) {
+    .postFront {
+      width: 400px;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1300px) {
+    .postFront {
+      width: 500px;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 1301px) and (max-width: 1500px) {
+    .postFront {
+      width: 600px;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 1501px) and (max-width: 1700px) {
+    .postFront {
+      width: 675px;
+
+      margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 1701px) and (max-width: 1900px){
+    .postFront {
+      width: 530px;
+      margin: auto;
+      margin-bottom: 50px;
+      margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 1901px) {
+    .postFront {
+      width: 600px;
+      margin: auto;
+      margin-bottom: 50px;
+      margin-right: 20px;
+    }
+}
+
+

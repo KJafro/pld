@@ -10,6 +10,8 @@
     overflow: hidden;
     display: block;
     position: relative;
+    background-image: url(./bgimg.jpg);
+    background-size: cover;
   }
   
 
@@ -22,15 +24,7 @@
     color: white;
     font-weight: bold;
     font-family: Lora;
-    animation: caption;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes caption {
-0% {top: 20%}
-100% {top: 50%}
-}
+  }
 
 .caption h1 {
   font-size: 40px;
@@ -39,7 +33,18 @@
 .caption p {
   margin-top: 5px;
   max-width: 500px;
+  opacity: 0;
+  animation-name: blogbtn;
+  animation-duration: 3s;
+  animation-delay: 3.8s;
+  animation-fill-mode: forwards;
 }
+
+@keyframes blogp {
+  0% {opacity: 0}
+  100% {opacity: 1}
+  }
+
 
 .blogbtn {
   margin-top: 10px;
@@ -53,7 +58,7 @@
   opacity: 0;
   animation-name: blogbtn;
   animation-duration: 3s;
-  animation-delay: 2s;
+  animation-delay: 4.8s;
   animation-fill-mode: forwards;
 }
 
@@ -74,7 +79,7 @@
   opacity: 0;
   animation-name: podcastbtn;
   animation-duration: 3s;
-  animation-delay: 2s;
+  animation-delay: 4.8s;
   animation-fill-mode: forwards;
 }
 
@@ -92,4 +97,8 @@
   background: linear-gradient(45deg, rgb(35, 128, 204), rgb(85, 118, 166));
 }
 
-
+.typewriter {
+  font-weight: bold;
+  font-family: Lora;
+  max-width: 500px;
+}

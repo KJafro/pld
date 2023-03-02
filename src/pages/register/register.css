@@ -1,31 +1,84 @@
 .register {
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url(https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    font-family: Lora;
+    background-color: rgb(226, 230, 236);
+    animation-name: animateReg;
+    animation-timing-function: ease-in-out;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes animateReg {
+0%{
+    background-color: rgb(226, 230, 236);
+}
+25%{
+    background-color: rgb(219, 223, 228);
+}
+50%{
+    background-color: rgb(205, 210, 217);
+}
+75%{
+    background-color: rgb(196, 203, 213);
+}
+100%{
+    background-color: rgb(226, 230, 236);
+}
+
+}
+
+.registerLeft {
+    background-image: url(../../../public/assets/regimg.jpg);
+    background-position: center;
     background-size: cover;
+    height: 100vh;
+    width: 300px;
+    background-position: center;
+    flex: 0.7;
+    border-radius: 3px;
+}
+
+.registerRight {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .registerTitle {
     font-size: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
 }
 
 .registerForm {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 50%;
 }
 
 .registerForm > label {
     margin: 10px 0;
+    font-weight: bold;
+    font-family: Lora;
+    text-align: center;
 }
 
 .registerInput {
-    padding: 10px;
+    padding: 12px;
+    border-radius: 8px;
     background-color: white;
     border: none;
+    text-align: center;
+}
+
+.registerInput:focus {
+    outline: 2px solid teal;
 }
 
 .registerButton {
@@ -35,7 +88,7 @@
     border: none;
     color: white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 12px;
 }
 
 .registerButton:hover {
@@ -52,5 +105,31 @@
     padding: 10px;
     color: white;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 850px) {
+    .register {
+        flex-direction: column;
+    }
+
+    .registerLeft {
+        width: 100%;
+        flex: 0.3;
+        box-shadow: 2px 2px 22px 2px;
+    }
+
+    .registerRight {
+        flex: 0.7;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+
+    .registerInput {
+            padding: 12px;
+            width: 100%;
+    }
+
 }
 

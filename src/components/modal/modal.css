@@ -1,0 +1,76 @@
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    display: block;
+    font-size: 22px;
+    color: rgb(75, 98, 211);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modal-content {
+    font-family: Lora;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+    box-shadow: 2px 2px 10px 2px;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.modal-content a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-content p {
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    color: red;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    
+}
+
+.hrModal {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 320px) {
+    .modal-content {
+        line-height: 1.2;
+    }
+}

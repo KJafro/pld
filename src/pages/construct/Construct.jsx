@@ -2,24 +2,17 @@ import './construct.css'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faSpotify, faInstagram } from "@fortawesome/free-brands-svg-icons"
+import Typewriter from 'typewriter-effect'
+
+var app = document.getElementById('app');
+
+var typewriter = new Typewriter(app, {
+    loop: false
+});
 
 export default function Construct() {
 
-    const progress = document.querySelector('.progress');
-    const progress_percentage = document.querySelector('.spanprogress');
 
-    let per = 0;
-    function progressLoad() {
-        if(per >= 80) {
-            progress.style.width = '80%';
-            progress_percentage.innerHTML = "80%";
-        } else {
-            progress.style.width = `${per}%`;
-            progress_percentage.innerHTML = `${per}%`;
-        }
-        per++
-    }
-    setInterval(progressLoad, 50)
 
   return (
     <>
@@ -30,10 +23,8 @@ export default function Construct() {
     <div className="containercon">
         
         <h1 className='h1con'>UNDER CONSTRUCTION</h1>
-        <h3>PROGRESS</h3>
-        <div className="progress-wrapper">
-            <div className="progress"><span className='spanprogress'>0%</span></div>
-        </div>
+        {/* <h3>PROGRESS</h3> */}
+        <hr className='constructhr'/>
         <div className="social-icons">
         <FontAwesomeIcon icon={faFacebook} className="Icon"></FontAwesomeIcon>
         <FontAwesomeIcon icon={faTwitter} className="Icon"></FontAwesomeIcon>

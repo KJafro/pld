@@ -1,6 +1,6 @@
 .top {
     width: 100%;
-    height: 50px;
+    height: 6vh;
     background-color: rgb(255, 255, 255);
     position: sticky;
     top: 0;
@@ -19,13 +19,29 @@
 }
 
 .topCenter {
-    flex: 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 2rem;
+    flex: 6;  
+}
+
+.nav-btn {
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.8rem;
 }
 
 .topIcon {
     font-size: 20px;
     margin-right: 10px;
-    color: #444;
+    color: #444444;
     cursor: pointer;
 }
 
@@ -51,17 +67,20 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    align-items: center;
+    margin: auto;
 }
 
 .topListItem {
     margin-right: 20px;
     font-size: 18px;
-    font-weight: 300;
     cursor: pointer;
+    color: rgb(29, 92, 180);
+    font-weight: 300;
 }
 
 .topListItem:hover {
-    color: rgb(65, 126, 196);
+    color: rgb(6, 52, 109);
 }
 
 .topSearchIcon {
@@ -69,4 +88,63 @@
     color: #666;
     cursor: pointer;
     margin-left: 15px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .nav-btn {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .topList {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;
+        gap: 1.5rem;
+        transform: translateY(-100vh);
+        background-color: white;
+        opacity: 0.9;
+    }
+
+    .topList a {}
+
+    .toplist {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .responsive_nav {
+        transform: none;
+    }
+
+
+    .nav-close-btn {
+        position: absolute;
+        top: 0.4rem;
+        right: 0rem;
+    }
+
+    .topCenter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        padding: 0 2rem;
+        flex: 1;
+    }
+
+    .topLeft, .topRight {
+        flex: 6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }

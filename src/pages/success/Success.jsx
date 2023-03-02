@@ -1,28 +1,37 @@
-import "./success.css"
-import { Oval } from "react-loader-spinner"
-import 'animate.css';
+import './success.css'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faTwitter, faSpotify, faInstagram } from "@fortawesome/free-brands-svg-icons"
+import Typewriter from 'typewriter-effect'
+
+var app = document.getElementById('app');
+
+var typewriter = new Typewriter(app, {
+    loop: false
+});
 
 export default function Success() {
+
+
+
   return (
-    
-    <div className="container">
-        <div className="successtxt">
-            <h2 class="animate__animated animate__fadeInDown">POST SUCCESSFULLY ADDED!</h2>
-            <Oval
-            height={70}
-            width={70}
-            color="#4fa94d"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-            ariaLabel='oval-loading'
-            secondaryColor="#4fa94d"
-            strokeWidth={2}
-            strokeWidthSecondary={2}
-            />
-            <meta http-equiv="refresh" content="3;url=https://everydaybeingfront.onrender.com" />
-        </div>
+    <>
+    {/* <meta http-equiv="refresh" content="3;url=http://localhost:3000/" /> */}
+    <div className="backgroundcon">
+
     </div>
-    
+    <div className="containercon">
+        
+        <h1 className='h1con'>POST ADDED!</h1>
+        {/* <h3>PROGRESS</h3> */}
+        <hr className='constructhr'/>
+        <div className="social-icons">
+        <FontAwesomeIcon icon={faFacebook} className="Icon"></FontAwesomeIcon>
+        <FontAwesomeIcon icon={faTwitter} className="Icon"></FontAwesomeIcon>
+        <Link to="https://open.spotify.com/show/5ZLCIJR0FHZLIREjPoTACy/"><FontAwesomeIcon icon={faSpotify} className="Icon"></FontAwesomeIcon></Link>
+        <Link to="https://instagram.com/everyday.being?igshid=YmMyMTA2M2Y="><FontAwesomeIcon icon={faInstagram} className="Icon"></FontAwesomeIcon></Link>
+        <p>Redirecting (5 secs)</p>
+        </div>
+    </div></>
   )
 }

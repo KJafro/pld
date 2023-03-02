@@ -1,7 +1,13 @@
 .settings {
     display: flex;
-    padding-top: 32px;
+    padding-top: 80px;
     font-family: Lora;
+    height: 94vh;
+    background-image: url(../../../public/assets/img15.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(255,255,255,0.5);
+    background-blend-mode: lighten;
 }
 
 .settingsWrapper {
@@ -44,19 +50,21 @@
 }
 
 .settingsForm input {
-    width: 50vw;
     justify-content: center;
     font-size: 22px;
-    border: none;
-    padding: 10px;
-    width: 50vw;
-    border-radius: 20px;
+    border: 2px solid black;
+    padding: 20px;
+    width: 40vw;
+    border-radius: 10px;
     margin-top: 10px;
     font-family: "Lora";
+    outline: none;
+    text-align: center;
 }
 
 .settingsForm input:focus {
-    outline: 2px solid rgb(65, 126, 196);
+    outline: none;
+    border: 2px solid rgb(74, 135, 210);
 }
 
 .settingsPP {
@@ -69,8 +77,6 @@
     color: gray;
     margin: 10px 0;
     height: 30px;
-    border: none;
-    border-bottom: 1px solid lightgrey;
 }
 
 .pp {
@@ -106,14 +112,14 @@ margin: auto;
     font-size: 20px;
     margin-top: 10px;
     text-align: center;
+    font-weight: bold;
 }
 
 .settingsForm > input {
     color: gray;
     margin: 10px 0;
     height: 30px;
-    border: none;
-    border-bottom: 1px solid lightgrey;
+    
 }
 
 .settingsSubmit {
@@ -127,3 +133,40 @@ margin: auto;
     margin-top: 20px;
     cursor: pointer;
 }
+
+.settingsSubmit:hover {
+    background-color: rgb(39, 151, 151);
+}
+
+@media only screen and (max-width: 700px) {
+    .settingsUpdateTitle {
+        font-size: 26px
+    }
+    .settingsForm input {
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1024px) {
+    .settingsForm input {
+        width: 50vw;
+        padding: 22px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1400px) {
+    .settingsForm input {
+        width: 50vw;
+        padding: 26px;
+    }
+}
+
+@media only screen and (min-width: 1899px) {
+    .settings {
+        padding-top: 200px;
+    }
+    .settingsForm input {
+        padding: 30px;
+    }
+}
+

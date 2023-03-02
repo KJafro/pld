@@ -1,3 +1,26 @@
 h1 {
     width: 100%;
 }
+
+.h1about
+{animation:tracking-in-expand-fwd-top .8s cubic-bezier(.215,.61,.355,1.000) both
+}
+
+.containerAbout {
+    display: flex;
+    height: 94vh;
+    background-color: rgb(220, 215, 215);
+}
+
+.h1About {
+    font-size: 60px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0px;
+    font-family: Lora;
+    color: green;
+    margin: auto;
+    text-align: center;
+}
+
+@keyframes tracking-in-expand-fwd-top{0%{letter-spacing:-.5em;transform:translateZ(-700px) translateY(-500px);opacity:0}40%{opacity:.6}100%{transform:translateZ(0) translateY(0);opacity:1}}

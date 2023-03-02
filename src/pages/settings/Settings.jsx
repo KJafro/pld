@@ -1,5 +1,5 @@
 import "./settings.css";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Context } from "../../context/Context";
 import { axiosInstance } from "../../config"
 import TopBar from "../../components/topbar/TopBar";
@@ -12,12 +12,18 @@ export default function Settings() {
   const [profilePic, setprofilePic] = useState("")
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const { user, dispatch } = useContext(Context);
   // const PF = "http://localhost:5000/images/"
 
+  useEffect(() => {
+    document.title = "Everyday Being | Settings"
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     if(username.length===0||email.length===0||password.length===0){
       setError(true)
     }
@@ -42,9 +48,12 @@ export default function Settings() {
     try {
       const res = await axiosInstance.put("/users/" + user._id, updatedUser);
       setSuccess(true);
+      setError(false)
+      setLoading(false)
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
       dispatch({ type: "UPDATE_FAILURE" });
+      setLoading(false)
     }
   };
   return (
@@ -91,11 +100,9 @@ export default function Settings() {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-                   {error?
-          <label className="errortxt">Please fill all available fields</label>:""}
-          <button className="settingsSubmit" type="submit">
-            Update
-          </button>
+          <button className="settingsSubmit" type="submit">{loading ? ("Adding Post...") : "Submit"}</button>
+          {error?
+          <label className="errortxt" style={{ color: "red", textAlign: "center", marginTop: "20px", fontSize: "20px" }}>Please fill all available fields</label>:""}
           {success && (
             <span
               style={{ color: "green", textAlign: "center", marginTop: "20px", fontSize: "20px" }}

@@ -4,10 +4,20 @@ import { Context } from "../../context/Context";
 import "./topbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faSpotify, faInstagram, faInstagramSquare } from "@fortawesome/free-brands-svg-icons"
+import { FaTimes, FaBars} from "react-icons/fa"
+import { useRef } from "react";
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
   // const PF = "https://everydaybeing.onrender.com/images/"
+  const navRef = useRef();
+  const showNavbar = () => {
+    navRef.current.classList.toggle("responsive_nav")
+  }
+
+  const hideNavbar = () =>{
+    navRef.current.classList.remove("responsive_nav")
+  }
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -21,58 +31,30 @@ export default function TopBar() {
         <Link to="https://instagram.com/everyday.being?igshid=YmMyMTA2M2Y="><FontAwesomeIcon icon={faInstagram} className="topIcon"></FontAwesomeIcon></Link>
       </div>
       <div className="topCenter">
-        <ul className="topList">
-          <li className="topListItem">
-            <Link className="link" to="/blog">
-              HOME
-            </Link>
-          </li>
-          <li className="topListItem">
-            <Link className="link" to="/about">
-              ABOUT
-            </Link>
-          </li>
-          <li className="topListItem">
-            <Link className="link" to="/success">
-              SUCCESS
-            </Link>
-          </li>
-          <li className="topListItem">
-            <Link className="link" to="/contact">
-              CONTACT
-            </Link>
-          </li>
-          <li className="topListItem">
-            <Link className="link" to="/write">
-              WRITE
-            </Link>
-          </li>
-          <li className="topListItem" onClick={handleLogout}>
-            {user && "LOGOUT"}
-          </li>
-        </ul>
+        <ul className="topList" ref={navRef}>
+          <li className="topListItem"><Link className="link" to="/blog">HOME</Link></li>
+          <li className="topListItem"><Link className="link" to="/about">ABOUT</Link></li>
+          <li className="topListItem"><Link className="link" to="/success">SUCCESS</Link></li>
+          <li className="topListItem"><Link className="link" to="/contact">CONTACT</Link></li>
+          <li className="topListItem"><Link className="link" to="/write">WRITE</Link></li>
+          <li className="topListItem" onClick={handleLogout}>{user && "LOGOUT"}</li>
+          <button className ="nav-btn nav-close-btn" onClick={hideNavbar}>
+          <FaTimes />
+          </button>
+          </ul>
       </div>
       <div className="topRight">
-        {user ? (
-          <Link to="/settings">
-            <img className="topImg" src={user.profilePic} alt="" />
-            {/* <img className="topImg" src={PF+user.profilePic} alt="" /> */}
-          </Link>
-        ) : (
-          <ul className="topList">
-            <li className="topListItem">
-              <Link className="link" to="/login">
-                LOGIN
-              </Link>
-            </li>
-            <li className="topListItem">
-              <Link className="link" to="/register">
-                REGISTER
-              </Link>
-            </li>
-          </ul>
+      <button className ="nav-btn" onClick={showNavbar}>
+          <FaBars />
+          </button>
+        {user ? (<Link to="/settings"><img className="topImg" src={user.profilePic} alt="" />
+            {/* <img className="topImg" src={PF+user.profilePic} alt="" /> */}</Link>) : (
+<ul className="topList">
+            <li className="topListItem"><Link className="link" to="/login">LOGIN</Link></li>
+            <li className="topListItem"><Link className="link" to="/register">REGISTER</Link></li>
+</ul>
         )}
-        <i className="topSearchIcon fas fa-search"></i>
+        {/* <i className="topSearchIcon fas fa-search"></i> */}
       </div>
     </div>
   );

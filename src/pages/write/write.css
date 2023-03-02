@@ -2,15 +2,39 @@
     padding-top: 50px;
 }
 
+.writeContainer {
+    display: flex;
+    height: 94vh;
+    animation: fadeInWrite ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInWrite {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+
+
+.right {
+    flex: 2;
+}
+
+
+
 .write h1 {
     text-align: center;
     margin-bottom: 10px;
-    font-family: Lora;
+    font-family: Allura;
+    font-size: 52px;
+    z-index: 22;
 }
 
-.writeForm {
-    position: relative;
-}
+
 
 .writeFormGroup {
     display: flex;
@@ -35,7 +59,7 @@
     font-size: 22px;
     padding: 10px;
     width: 50vw;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 10px;
     font-family: "Lora";
     border: 2px solid rgb(14, 14, 14);
@@ -60,7 +84,7 @@
     top: 20px;
     right: 50px;
     color: white;
-    background-image: linear-gradient(to right, rgb(68, 150, 150) , teal);
+    background-image: linear-gradient(to right, rgb(54, 117, 212) , rgb(44, 95, 205));
     padding: 10px;
     border: none;
     border-radius: 10px;
@@ -70,7 +94,7 @@
 }
 
 .writeSubmit:hover {
-    background-image: linear-gradient(to left, rgb(6, 168, 168) , rgb(88, 154, 154));
+    background-image: linear-gradient(to left, rgb(56, 127, 207) , rgb(56, 127, 207));
 }
 
 .writeImg {
@@ -80,4 +104,51 @@
     border-radius: 10px;
     object-fit: cover;
 }
+
+.errortxt {
+    font-family: Lora;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    .h1Write {
+        font-size: 26px;
+    }
+    .writeInput {
+        width: 70vw;
+    }
+    .writeSubmit {
+        width: 120px;
+    }
+    .writeContainer {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1400px) {
+    .writeInput {
+        width: 60vw;
+    }
+}
+
+@media only screen and (min-width: 1899px) {
+    .write {
+        padding-top: 15em;
+    }
+    .h1Write {
+        font-size: 30px;
+    }
+    .writeInput {
+        width: 60vw;
+    }
+    .writeSubmit {
+        width: 200px;
+        padding: 14px;
+    }
+    
+}
+
 

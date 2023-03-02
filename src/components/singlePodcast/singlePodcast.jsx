@@ -1,4 +1,4 @@
-import "./singlePost.css"
+import "./singlePodcast.css"
 import { axiosInstance } from "../../config"
 import { useLocation } from "react-router-dom"
 import { useEffect, useState, useContext } from "react"
@@ -13,29 +13,29 @@ export default function SinglePost() {
   const [post, setPost] = useState({})
   // const PF = "https://localhost:5000/images/";
   const { user } = useContext(Context);
-  const [title, setTitle] = useState("")
-  const [desc, setDesc] = useState("")
+  const [titlePodcast, settitlePodcast] = useState("")
+  const [descPodcast, setdescPodcast] = useState("")
   const [updateMode, setUpdateMode] = useState(false)
   let moment = require ('moment');
 
   useEffect(() => {
-    const getPost = async () => {
-      const res = await axiosInstance.get("/posts/" + path)
-      setPost(res.data)
-      setTitle(res.data.title)
-      setDesc(res.data.desc)
+    const getPodcast = async () => {
+      const res = await axiosInstance.get("/podcasts/" + path)
+      setPodcast(res.data)
+      settitlePodcast(res.data.titlePodcast)
+      setdescPodcast(res.data.descPodcast)
     };
     getPost()
   },[path])
   useEffect(() => {
-    document.title = `Everyday Being | ${post.title}`
+    document.title = `Everyday Being | ${podcast.titlePodcast}`
   }, []);
 
   const handleDelete = async() => {
     try {
-      await axiosInstance.delete(`/posts/${post._id}`, {
+      await axiosInstance.delete(`/podcasts/${podcast._id}`, {
       data: { username: user.username },});
-      window.location.replace("/#/blog");
+      window.location.replace("/#/podcast");
     } catch (err) {
 
     }
@@ -43,10 +43,10 @@ export default function SinglePost() {
 
   const handleUpdate = async () => {
     try {
-      await axiosInstance.put(`/posts/${post._id}`, {
+      await axiosInstance.put(`/podcasts/${podcast._id}`, {
        username: user.username,
-       title:title,
-       desc
+       titlePodcast:titlePodcast,
+       descPodcast
       });
       //IF WANT TO RELOAD PAGE
       // window.location.reload();
@@ -63,11 +63,11 @@ export default function SinglePost() {
             <img src={post.photo} alt="" className="singlePostImg" />
           )}
           
-            {updateMode ? (<input type="text" value={title} className="singlePostTitleInput" autoFocus onChange={(e)=>setTitle(e.target.value)}/>) : (
+            {updateMode ? (<input type="text" value={titlePodcast} className="singlePostTitleInput" autoFocus onChange={(e)=>settitlePodcast(e.target.value)}/>) : (
               
            
             <h1 className="singlePostTitle">
-              {title}
+              {titlePodcast}
               {post.username === user?.username && (
             <div className="singlePostEdit">
             <FontAwesomeIcon icon={faEdit} className="singlePostIcon" onClick={() => setUpdateMode(true)}></FontAwesomeIcon>
@@ -79,17 +79,17 @@ export default function SinglePost() {
             }
             <div className="singlePostInfo">
                 <span className="singlePostAuthor">Author: 
-                <Link to={`/${post.username}`} className="link">
-                   <b> {post.username}</b>
+                <Link to={`/${podcast.username}`} className="link">
+                   <b> {podcast.username}</b>
                   </Link>
                 </span>
                 
                 
                 <span className="singlePostDate">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
             </div>
-            {updateMode ? (<textarea className="singlePostDescInput" value={desc} onChange={(e)=>setDesc(e.target.value)}/>) : 
+            {updateMode ? (<textarea className="singlePostDescInput" value={descPodcast} onChange={(e)=>setdescPodcast(e.target.value)}/>) : 
             (<p className="singlePostDesc">
-              {desc}
+              {descPodcast}
             </p>)}
 
          
