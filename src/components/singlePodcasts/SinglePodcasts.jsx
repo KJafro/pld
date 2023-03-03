@@ -7,7 +7,7 @@ import {Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
 
-export default function SinglePodcast() {
+export default function SinglePodcasts() {
   const location = useLocation()
   const path = location.pathname.split("/")[2];
   const [podcast, setPodcast] = useState({})
