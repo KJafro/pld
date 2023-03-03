@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import Header from "../../components/header/Header"
 import Podcasts from "../../components/podcasts/Podcasts"
-import "./home.css"
+import "./podcast.css"
 import { axiosInstance } from "../../config"
 import { useLocation } from "react-router"
 import TopBar from "../../components/topbar/TopBar"
 
-export default function Home() {
+export default function Podcast() {
   useEffect(() => {
     document.title = "Everyday Being | Podcasts"
   }, []);

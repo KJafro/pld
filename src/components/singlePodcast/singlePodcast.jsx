@@ -7,14 +7,14 @@ import {Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
 
-export default function SinglePost() {
+export default function SinglePodcast() {
   const location = useLocation()
   const path = location.pathname.split("/")[2];
-  const [post, setPost] = useState({})
+  const [podcast, setPodcast] = useState({})
   // const PF = "https://localhost:5000/images/";
   const { user } = useContext(Context);
-  const [titlePodcast, settitlePodcast] = useState("")
-  const [descPodcast, setdescPodcast] = useState("")
+  const [title, setTitle] = useState("")
+  const [desc, setDesc] = useState("")
   const [updateMode, setUpdateMode] = useState(false)
   let moment = require ('moment');
 
@@ -22,13 +22,13 @@ export default function SinglePost() {
     const getPodcast = async () => {
       const res = await axiosInstance.get("/podcasts/" + path)
       setPodcast(res.data)
-      settitlePodcast(res.data.titlePodcast)
-      setdescPodcast(res.data.descPodcast)
+      setTitle(res.data.titlePodcast)
+      setDesc(res.data.descPodcast)
     };
-    getPost()
+    getPodcast()
   },[path])
   useEffect(() => {
-    document.title = `Everyday Being | ${podcast.titlePodcast}`
+    document.title = `Everyday Being | ${podcast.title}`
   }, []);
 
   const handleDelete = async() => {
@@ -45,8 +45,8 @@ export default function SinglePost() {
     try {
       await axiosInstance.put(`/podcasts/${podcast._id}`, {
        username: user.username,
-       titlePodcast:titlePodcast,
-       descPodcast
+       title:title,
+       desc
       });
       //IF WANT TO RELOAD PAGE
       // window.location.reload();
@@ -56,46 +56,46 @@ export default function SinglePost() {
   }
 
   return (
-    <div className="singlePost">
-        <div className="singlePostWrapper">
-          {post.photo && (
+    <div className="singlePodcast">
+        <div className="singlePodcastWrapper">
+          {podcast.photo && (
             // <img src={PF + post.photo} alt="" className="singlePostImg" />
-            <img src={post.photo} alt="" className="singlePostImg" />
+            <img src={podcast.photo} alt="" className="singlePodcastImg" />
           )}
           
-            {updateMode ? (<input type="text" value={titlePodcast} className="singlePostTitleInput" autoFocus onChange={(e)=>settitlePodcast(e.target.value)}/>) : (
+            {updateMode ? (<input type="text" value={title} className="singlePodcastTitleInput" autoFocus onChange={(e)=>setTitle(e.target.value)}/>) : (
               
            
-            <h1 className="singlePostTitle">
+            <h1 className="singlePodcastTitle">
               {titlePodcast}
-              {post.username === user?.username && (
-            <div className="singlePostEdit">
-            <FontAwesomeIcon icon={faEdit} className="singlePostIcon" onClick={() => setUpdateMode(true)}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faTrash} className="singlePostIcon" onClick={handleDelete}></FontAwesomeIcon>
+              {podcast.username === user?.username && (
+            <div className="singlePodcastEdit">
+            <FontAwesomeIcon icon={faEdit} className="singlePodcastIcon" onClick={() => setUpdateMode(true)}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faTrash} className="singlePodcastIcon" onClick={handleDelete}></FontAwesomeIcon>
             </div>
 )}
             </h1>
              )
             }
-            <div className="singlePostInfo">
-                <span className="singlePostAuthor">Author: 
+            <div className="singlePodcastInfo">
+                <span className="singlePodcastAuthor">Author: 
                 <Link to={`/${podcast.username}`} className="link">
                    <b> {podcast.username}</b>
                   </Link>
                 </span>
                 
                 
-                <span className="singlePostDate">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
+                <span className="singlePodcastDate">{moment(podcast.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
             </div>
-            {updateMode ? (<textarea className="singlePostDescInput" value={descPodcast} onChange={(e)=>setdescPodcast(e.target.value)}/>) : 
-            (<p className="singlePostDesc">
-              {descPodcast}
+            {updateMode ? (<textarea className="singlePodcastDescInput" value={desc} onChange={(e)=>setDesc(e.target.value)}/>) : 
+            (<p className="singlePodcastDesc">
+              {desc}
             </p>)}
 
          
             
             {updateMode && (
-            <button className="singlePostButton" onClick={handleUpdate}>Update</button>
+            <button className="singlePodcastButton" onClick={handleUpdate}>Update</button>
             )}
         </div>
     </div>

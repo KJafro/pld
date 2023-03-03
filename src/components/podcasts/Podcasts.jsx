@@ -1,5 +1,5 @@
 import Podcast from "../podcast/Podcast"
-import "./posts.css"
+import "./podcasts.css"
 
 export default function Podcasts({podcasts}) {
   return (

@@ -9,11 +9,14 @@ import About from "./pages/about/About"
 import KurtKid from "./pages/kurtkid/KurtKid";
 import Success from "./pages/success/Success"
 import ContactSuccess from "./pages/success/ContactSuccess"
+import Createpodcast from "./pages/createpodcast/Createpodcast"
+import Podcast from "./components/podcast/Podcast";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useContext } from 'react';
 import { Context } from "./context/Context"
 import Contact from './pages/contact/Contact';
 import Construct from './pages/construct/Construct';
+import SinglePodcast from './components/singlePodcast/SinglePodcast';
 
 
 function App() {
@@ -31,10 +34,13 @@ function App() {
           <Route path="/write" element={user ? <Write /> : <Register/>} />
           <Route path="/settings" element={user ? <Settings/> : <Register/>} />
           <Route path="/post/:postId" element={<Single/>} />
+          <Route path="/podcast/:podcastId" element={<SinglePodcast/>} />
           <Route exact path="/about" element={<About/>} />
           <Route exact path="/success" element={<Success/>} />
           <Route exact path="/contact" element={<Contact/>} />
           <Route exact path="/contactsuccess" element={<ContactSuccess/>} />
+          <Route exact path="/createpodcast" element={<Createpodcast/>} />
+          <Route exact path="/podcast" element={<Podcast/>} />
         </Routes>
     </HashRouter>
   );
