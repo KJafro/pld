@@ -18,7 +18,7 @@ import Podcast from "./pages/podcast/Podcast";
 import Contact from './pages/contact/Contact';
 import Construct from './pages/construct/Construct';
 import SinglePodcasts from './components/singlePodcast/SinglePodcast';
-import SinglePodcasts from './pages/singlePodcasts/SinglePodcasts';
+import SinglePodcaster from './pages/singlePodcasts/SinglePodcasts';
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
           <Route path="/write" element={user ? <Write /> : <Register/>} />
           <Route path="/settings" element={user ? <Settings/> : <Register/>} />
           <Route path="/post/:postId" element={<Single/>} />
-          <Route path="/podcast/:podcastId" element={<SinglePodcasts/>} />
+          <Route path="/podcast/:podcastId" element={<SinglePodcaster/>} />
           <Route exact path="/about" element={<About/>} />
           <Route exact path="/success" element={<Success/>} />
           <Route exact path="/contact" element={<Contact/>} />
