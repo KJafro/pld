@@ -17,7 +17,7 @@ import Createpodcast from "./pages/createPodcast/Createpodcast"
 import Podcast from "./pages/podcast/Podcast";
 import Contact from './pages/contact/Contact';
 import Construct from './pages/construct/Construct';
-import SinglePodcast from './components/singlePodcast/SinglePodcast';
+import SinglePodcast from './pages/singlePodcast/SinglePodcast';
 
 
 function App() {
