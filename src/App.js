@@ -17,6 +17,7 @@ import WritePodcast from "./pages/writePodcast/WritePodcast"
 import Podcast from "./pages/podcast/Podcast";
 import Contact from './pages/contact/Contact';
 import Construct from './pages/construct/Construct';
+import SinglePodcasts from './components/singlePodcast/SinglePodcast';
 import SinglePodcasts from './pages/singlePodcasts/SinglePodcasts';
 
 
