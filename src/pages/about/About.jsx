@@ -23,7 +23,7 @@ export default function About() {
     </div>
     <TopBar/>
     <div className="containerAbout">
-        <h1 className='h1About'>COMING SOON!</h1>
+        <h1 className='h1About'>COMING SOON!!!</h1>
         {/* <h3>PROGRESS</h3> */}
     </div></>
   )
