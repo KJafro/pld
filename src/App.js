@@ -10,11 +10,13 @@ import KurtKid from "./pages/kurtkid/KurtKid";
 import Success from "./pages/success/Success"
 import ContactSuccess from "./pages/success/ContactSuccess"
 import Createpodcast from "./pages/createpodcast/Createpodcast"
+import Podcast from "./pages/podcast/Podcast";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useContext } from 'react';
 import { Context } from "./context/Context"
 import Contact from './pages/contact/Contact';
 import Construct from './pages/construct/Construct';
+import SinglePodcast from './pages/singlePodcast/SinglePodcast';
 
 
 function App() {
