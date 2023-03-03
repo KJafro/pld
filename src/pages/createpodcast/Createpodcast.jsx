@@ -6,7 +6,7 @@ import { useContext } from "react";
 import TopBar from "../../components/topbar/TopBar"
 import { FaQuestion } from "react-icons/fa"
 
-export default function Write() {
+export default function Createpodcast() {
   const [title, setTitle] = useState("")
   const [desc, setDesc] = useState("")
   const [photo, setPhoto] = useState("")
