@@ -13,7 +13,7 @@ import About from "./pages/about/About"
 import KurtKid from "./pages/kurtkid/KurtKid";
 import Success from "./pages/success/Success"
 import ContactSuccess from "./pages/success/ContactSuccess"
-import Createpodcast from "./pages/createPodcast/Createpodcast"
+import WritePodcast from "./pages/writePodcast/WritePodcast"
 import Podcast from "./pages/podcast/Podcast";
 import Contact from './pages/contact/Contact';
 import Construct from './pages/construct/Construct';
@@ -40,7 +40,7 @@ function App() {
           <Route exact path="/success" element={<Success/>} />
           <Route exact path="/contact" element={<Contact/>} />
           <Route exact path="/contactsuccess" element={<ContactSuccess/>} />
-          <Route exact path="/createpodcast" element={<Createpodcast/>} />
+          <Route exact path="/writepodcasts" element={<WritePodcast/>} />
           <Route exact path="/podcast" element={<Podcast/>} />
         </Routes>
     </HashRouter>
