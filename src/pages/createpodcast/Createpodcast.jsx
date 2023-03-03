@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import "./createpodcast.css"
 import { axiosInstance } from "../../config";
-import { Context } from './../../context/Context';
+import { Context } from '../../context/Context';
 import { useContext } from "react";
 import TopBar from "../../components/topbar/TopBar"
 import { FaQuestion } from "react-icons/fa"
@@ -22,7 +22,7 @@ export default function Write() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true)
-    if(title.length===0||desc.length===0||video.length===0){
+    if(title.length===0||desc.length===0||photo.length===0){
       setError(true)
     }
     const newPodcast = {

@@ -10,7 +10,7 @@ export default function Podcast({podcast}) {
 <div className="podcastFront">
       {podcast.photo && (
         // <img class="postImg" src={PF + post.photo/} alt="" />
-        <Link to = {`/podcast/${podcast._id}`} className="link"><img class="podcastImg" src={podcast.photo} alt="" /></Link>
+        <Link to = {`/podcast/${podcast._id}`} className="link"><iframe class="podcastImg" src="https://open.spotify.com/show/5ZLCIJR0FHZLIREjPoTACy?si=ca5f04ec61cb4ba5" alt="" /></Link>
       )}
         <div className="podcastInfo">
             {/* <div className="postCats">{
