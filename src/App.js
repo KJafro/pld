@@ -1,7 +1,3 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
-import { useContext } from 'react';
-import { Context } from "./context/Context"
-
 import Home from "./pages/home/Home";
 import Index from "./pages/index/Index"
 import Single from "./pages/single/Single"
@@ -13,12 +9,14 @@ import About from "./pages/about/About"
 import KurtKid from "./pages/kurtkid/KurtKid";
 import Success from "./pages/success/Success"
 import ContactSuccess from "./pages/success/ContactSuccess"
-import WritePodcast from "./pages/writePodcast/WritePodcast"
 import Podcast from "./pages/podcast/Podcast";
+import SinglePodcast from "./pages/singlePodcast/SinglePodcast";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import { useContext } from 'react';
+import { Context } from "./context/Context"
 import Contact from './pages/contact/Contact';
 import Construct from './pages/construct/Construct';
-import SinglePodcasts from './components/singlePodcast/SinglePodcast';
-import SinglePodcaster from './pages/singlePodcasts/SinglePodcasts';
+import Createpodcast from './pages/createPodcast/Createpodcast'
 
 
 function App() {
@@ -36,13 +34,13 @@ function App() {
           <Route path="/write" element={user ? <Write /> : <Register/>} />
           <Route path="/settings" element={user ? <Settings/> : <Register/>} />
           <Route path="/post/:postId" element={<Single/>} />
-          <Route path="/podcast/:podcastId" element={<SinglePodcaster/>} />
+          <Route path="/podcast/:podcastId" element={<SinglePodcast/>} />
           <Route exact path="/about" element={<About/>} />
           <Route exact path="/success" element={<Success/>} />
           <Route exact path="/contact" element={<Contact/>} />
           <Route exact path="/contactsuccess" element={<ContactSuccess/>} />
-          <Route exact path="/writepodcasts" element={<WritePodcast/>} />
           <Route exact path="/podcast" element={<Podcast/>} />
+          <Route exact path="/createpodcast" element={user ? <Createpodcast /> : <Register/>} />
         </Routes>
     </HashRouter>
   );

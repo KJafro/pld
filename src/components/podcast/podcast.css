@@ -96,26 +96,54 @@
 @media screen and (max-width: 850px) {
     .podcastFront {
       width: 100%;
-      margin: auto;
       margin-bottom: 50px;
       margin-right: 20px;
     }
 }
 
-@media screen and (min-width: 851px) and (max-width: 1100px) {
+@media screen and (min-width: 851px) and (max-width: 1000px) {
     .podcastFront {
-      width: 400px;
+      width: 420px;
       margin: auto;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
+    }
+    .podcastFront:nth-child(3), 
+    .podcastFront:nth-child(6), 
+    .podcastFront:nth-child(9), 
+    .podcastFront:nth-child(12), 
+    .podcastFront:nth-child(15), 
+    .podcastFront:nth-child(18),
+    .podcastFront:nth-child(21), 
+    .podcastFront:nth-child(24) {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1100px) {
+    .podcastFront {
+      width: 460px;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+    .podcastFront:nth-child(3), 
+    .podcastFront:nth-child(6), 
+    .podcastFront:nth-child(9), 
+    .podcastFront:nth-child(12), 
+    .podcastFront:nth-child(15), 
+    .podcastFront:nth-child(18),
+    .podcastFront:nth-child(21), 
+    .podcastFront:nth-child(24) {
+        width: 100%;
     }
 }
 
 @media screen and (min-width: 1101px) and (max-width: 1300px) {
     .podcastFront {
-      width: 500px;
+      width: 525px;
       margin: auto;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
+    
 }
 
 @media screen and (min-width: 1301px) and (max-width: 1500px) {
@@ -129,24 +157,29 @@
 @media screen and (min-width: 1501px) and (max-width: 1700px) {
     .podcastFront {
       width: 675px;
-
+      margin: auto;
       margin-bottom: 50px;
     }
 }
 
-@media screen and (min-width: 1701px) and (max-width: 1900px){
+@media screen and (min-width: 1701px) and (max-width: 1750px) {
     .podcastFront {
-      width: 530px;
-      margin: auto;
+      width: 500px;
       margin-bottom: 50px;
-      margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 1751px) and (max-width: 1800px){
+    .podcastFront {
+      width: 520px;
+      margin-bottom: 50px;
+      
     }
 }
 
 @media screen and (min-width: 1901px) {
     .podcastFront {
-      width: 600px;
-      margin: auto;
+      width: 580px;
       margin-bottom: 50px;
       margin-right: 20px;
     }

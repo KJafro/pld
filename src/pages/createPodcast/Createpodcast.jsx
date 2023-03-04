@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import "./createpodcast.css"
 import { axiosInstance } from "../../config";
-import { Context } from '../../context/Context';
+import { Context } from './../../context/Context';
 import { useContext } from "react";
 import TopBar from "../../components/topbar/TopBar"
 import { FaQuestion } from "react-icons/fa"
@@ -46,7 +46,7 @@ export default function Createpodcast() {
     try {
       const res = await axiosInstance.post("/podcasts", newPodcast);
       // window.location.replace("https://everydaybeingfront.onrender.com/post/" + res.data._id);
-      window.location.replace("/success/");
+      window.location.replace("/#/podcast/");
     } catch (err) {
       setLoading(false)
     }

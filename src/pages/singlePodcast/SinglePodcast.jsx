@@ -1,7 +1,7 @@
 import "./singlepodcast.css"
 import TopBar from "../../components/topbar/TopBar";
 import { useEffect } from 'react';
-import SinglePodcast from '../../components/singlePodcast/SinglePodcast';
+import SinglePodcast from '../../components/singlePodcasts/SinglePodcast';
 
 export default function SinglePodcasts() {
   useEffect(() => {

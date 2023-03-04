@@ -22,8 +22,8 @@ export default function SinglePodcasts() {
     const getPodcast = async () => {
       const res = await axiosInstance.get("/podcasts/" + path)
       setPodcast(res.data)
-      setTitle(res.data.titlePodcast)
-      setDesc(res.data.descPodcast)
+      setTitle(res.data.title)
+      setDesc(res.data.desc)
     };
     getPodcast()
   },[path])
@@ -67,7 +67,7 @@ export default function SinglePodcasts() {
               
            
             <h1 className="singlePodcastTitle">
-              {titlePodcast}
+              {title}
               {podcast.username === user?.username && (
             <div className="singlePodcastEdit">
             <FontAwesomeIcon icon={faEdit} className="singlePodcastIcon" onClick={() => setUpdateMode(true)}></FontAwesomeIcon>

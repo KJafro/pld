@@ -93,20 +93,31 @@
     background-color: rgb(246, 246, 255);
 }
 
+
 @media screen and (max-width: 850px) {
     .postFront {
       width: 100%;
       margin: auto;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       margin-right: 20px;
     }
 }
 
 @media screen and (min-width: 851px) and (max-width: 1100px) {
     .postFront {
-      width: 400px;
+      width: 420px;
       margin: auto;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
+    }
+    .postFront:nth-child(3), 
+    .postFront:nth-child(6), 
+    .postFront:nth-child(9), 
+    .postFront:nth-child(12), 
+    .postFront:nth-child(15), 
+    .postFront:nth-child(18),
+    .postFront:nth-child(21), 
+    .postFront:nth-child(24) {
+        width: 100%;
     }
 }
 
