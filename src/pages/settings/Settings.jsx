@@ -2,7 +2,8 @@ import "./settings.css";
 import { useContext, useState, useEffect } from "react";
 import { Context } from "../../context/Context";
 import { axiosInstance } from "../../config"
-import TopBar from "../../components/topbar/TopBar";
+import TopBarGeneral from "../../components/topbar/TopBarGeneral";
+import SettingsModal from "../../components/modal/SettingsModals"
 
 export default function Settings() {
   const [file, setFile] = useState(null);
@@ -58,7 +59,7 @@ export default function Settings() {
   };
   return (
     <>
-    <TopBar/>
+    <TopBarGeneral/>
     <div className="settings">
       <div className="settingsWrapper">
         <div className="settingsTitle">
@@ -71,6 +72,7 @@ export default function Settings() {
               alt="" className="pp"
             />
             <label className="settingslbl">Profile Picture</label>
+            <SettingsModal/>
             <input type="text" placeholder="Image URL" onChange={e=>setprofilePic(e.target.value)}/>
             
             {/* <label htmlFor="fileInput">

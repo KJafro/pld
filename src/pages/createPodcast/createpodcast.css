@@ -1,5 +1,5 @@
 .write {
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .writeContainer {
@@ -8,6 +8,14 @@
     animation: fadeInWrite ease 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+}
+
+.leftWrite {
+    flex: 0.7;
+    background-image: url(../../../public/assets/img9.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @keyframes fadeInWrite {
@@ -21,7 +29,7 @@ opacity: 1;
 
 
 .right {
-    flex: 2;
+    flex: 1;
 }
 
 
@@ -40,6 +48,7 @@ opacity: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    white-space: pre-line;
 }
 
 .writeIcon {
@@ -58,7 +67,7 @@ opacity: 1;
 .writeInput {
     font-size: 22px;
     padding: 10px;
-    width: 50vw;
+    width: 40vw;
     border-radius: 10px;
     margin-top: 10px;
     font-family: "Lora";
@@ -73,7 +82,8 @@ opacity: 1;
 
 .writeText {
     font-size: 20px;
-    height: 30vh;
+    height: 18vh;
+    white-space: pre-line;
 }
 
 .writeInput-writeText {
@@ -91,6 +101,7 @@ opacity: 1;
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
+    width: 8em;
 }
 
 .writeSubmit:hover {
@@ -118,7 +129,7 @@ opacity: 1;
         font-size: 26px;
     }
     .writeInput {
-        width: 70vw;
+        width: 80vw;
     }
     .writeSubmit {
         width: 120px;

@@ -6,6 +6,8 @@ import { Context } from "../../context/Context";
 import {Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
+import TopBarPodcast from "../../components/topbar/TopBarPodcast"
+import { SpotifyEmbed } from 'spotify-embed';
 
 export default function SinglePodcasts() {
   const location = useLocation()
@@ -60,7 +62,7 @@ export default function SinglePodcasts() {
         <div className="singlePodcastWrapper">
           {podcast.photo && (
             // <img src={PF + post.photo} alt="" className="singlePostImg" />
-            <img src={podcast.photo} alt="" className="singlePodcastImg" />
+            <SpotifyEmbed src={podcast.photo} alt="" className="singlePodcastImg" />
           )}
           
             {updateMode ? (<input type="text" value={title} className="singlePodcastTitleInput" autoFocus onChange={(e)=>setTitle(e.target.value)}/>) : (
@@ -85,7 +87,7 @@ export default function SinglePodcasts() {
                 </span>
                 
                 
-                <span className="singlePodcastDate">{moment(podcast.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
+                <span className="singlePodcastDate">{moment(podcast.createdAt).format('MMMM Do YYYY, h:mm a')}</span>
             </div>
             {updateMode ? (<textarea className="singlePodcastDescInput" value={desc} onChange={(e)=>setDesc(e.target.value)}/>) : 
             (<p className="singlePodcastDesc">

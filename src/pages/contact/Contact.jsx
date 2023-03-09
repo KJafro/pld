@@ -1,5 +1,5 @@
 import './contact.css'
-import TopBar from "../../components/topbar/TopBar";
+import TopBarGeneral from "../../components/topbar/TopBarGeneral";
 import emailjs from '@emailjs/browser'
 import React, { useRef } from 'react'
 import { useState } from 'react';
@@ -25,11 +25,18 @@ export default function Contact() {
     };
   return (
     <>
-    <TopBar/>
+    <TopBarGeneral/>
     <div className="contactContainer">
+      <div className="leftContact">
+      <div className="leftBackground">
+        <div className="leftTitle">
+        CONTACT US
+      </div>
+      </div>
+      </div>
       <div className="rightContact">
     <div className="write">
-      <h1 className='h1Contact'>Contact</h1>
+      <p className='writePContact'>Please fill out the form below</p>
         <form ref={form} onSubmit={sendEmail} className="writeForm">
             <div className="writeFormGroup">
                 <label htmlFor="fileInput">

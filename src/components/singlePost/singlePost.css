@@ -82,6 +82,7 @@
     line-height: 25px;
     font-family: 'Varela Round', sans-serif;
     margin-left: 10px;
+    white-space: pre-line;
 }
 
 .singlePostDesc::first-letter {
@@ -121,5 +122,17 @@
 @media only screen and (min-width: 1024px) {
     .singlePost {
         width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .singlePostDesc {
+        font-size: 14px;
+        line-height: 30px;
+        font-family: 'Varela Round', sans-serif;
+        margin-left: 10px;
+        margin-top: 10px;
+        white-space: pre-line;
     }
 }

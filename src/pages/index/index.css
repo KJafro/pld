@@ -10,7 +10,7 @@
     overflow: hidden;
     display: block;
     position: relative;
-    background-image: url(./bgimg.jpg);
+    background-image: url(./bgimgs.jpg);
     background-size: cover;
   }
   
@@ -36,14 +36,9 @@
   opacity: 0;
   animation-name: blogbtn;
   animation-duration: 3s;
-  animation-delay: 3.8s;
+  animation-delay: 3.5s;
   animation-fill-mode: forwards;
 }
-
-@keyframes blogp {
-  0% {opacity: 0}
-  100% {opacity: 1}
-  }
 
 
 .blogbtn {
@@ -51,15 +46,17 @@
   padding: 8px;
   cursor: pointer;
   color: white;
-  background: linear-gradient(45deg, rgb(59, 124, 178), rgb(36, 110, 213));
-  width: 80px;
+  background-color: rgb(49, 138, 206);
   border-radius: 5px;
   font-weight: bold;
   opacity: 0;
   animation-name: blogbtn;
-  animation-duration: 3s;
-  animation-delay: 4.8s;
+  animation-duration: 2s;
+  animation-delay: 4.5s;
   animation-fill-mode: forwards;
+  margin-right: 5px;
+  width: 90px;
+  font-size: 1em;
 }
 
 @keyframes blogbtn {
@@ -72,15 +69,16 @@
   padding: 8px;
   cursor: pointer;
   color: white;
-  background: linear-gradient(45deg, rgb(59, 124, 178), rgb(36, 110, 213));
-  width: 80px;
+  background-color: rgb(49, 138, 206);
+  width: 90px;
   border-radius: 5px;
   font-weight: bold;
   opacity: 0;
   animation-name: podcastbtn;
-  animation-duration: 3s;
-  animation-delay: 4.8s;
+  animation-duration: 2s;
+  animation-delay: 4.5s;
   animation-fill-mode: forwards;
+  font-size: 1em;
 }
 
 @keyframes podcastbtn {
@@ -90,15 +88,21 @@
 
 
 .blogbtn:hover {
-  background: linear-gradient(45deg, rgb(35, 128, 204), rgb(85, 118, 166));
+  background-color: rgb(84, 154, 207);
 }
 
 .podcastbtn:hover {
-  background: linear-gradient(45deg, rgb(35, 128, 204), rgb(85, 118, 166));
+  background-color: rgb(84, 154, 207);
 }
 
 .typewriter {
   font-weight: bold;
   font-family: Lora;
   max-width: 500px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .caption p {
+    width: 350px;
+  }
 }

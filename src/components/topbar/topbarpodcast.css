@@ -1,0 +1,13 @@
+.topListItemPodcast {
+    margin-right: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    color: rgb(29, 92, 180);
+    font-weight: 300;
+}
+
+@media screen and (min-width: 1025px)and (max-width: 1225px) {
+    .topListItemPodcast {
+        font-size: 13.8px;
+    }
+}

@@ -1,43 +1,80 @@
 .contactContainer {
+    display: flex;
     height: 94vh;
-    background-image: url(../../../public/assets/34781.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    animation: fadeInContact ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
 }
 
-@keyframes fadeInContact {
-0% {
-opacity: 0;
-}
-100% {
-opacity: 1;
-}
-}
 
 .write {
     margin-left: 100px;
-    margin-top: 50px;
 }
 
 
 
 .rightContact {
-    flex: 2;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(239, 238, 238);
+    background-color: rgb(223, 220, 220);
 }
-.h1Contact {
-    font-family: Lora;
+
+.leftContact {
+    flex: 0.7;
+    background-image: url(../../../public/assets/cc.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+    box-shadow: 0px 0px 20px 2px;
+}
+
+.leftBackground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.leftTitle {
+    height: 94vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: white;
     font-size: 50px;
+    font-family: Lora;
+    font-size: 4em;
+    font-family: Lora;
+}
+
+.writePContact {
+    font-size: 22px;
+    font-family: Lora;
 }
 
 
 @media only screen and (max-width: 1024px) {
+    .contactContainer {
+        display: flex;
+        height: 94vh;
+        flex-direction: column;
+    }
+
+    .leftTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30vh;
+        font-size: 34px;
+    }
+
+    .rightContact {
+        align-items: start;
+    }
+
     .h1Contact {
         font-size: 26px;
     }
@@ -50,6 +87,12 @@ opacity: 1;
         background-position: 0;
         background-size: cover;
     }
+
+        .leftContact {
+            width: 100%;
+            flex: 0.3;
+            box-shadow: 0px 0px 8px 2px;
+        }
 }
 
 @media screen and (min-width: 851px) and (max-width: 1100px) {

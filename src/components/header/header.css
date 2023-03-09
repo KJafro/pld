@@ -1,5 +1,4 @@
 .header {
-
 }
 
 .headerTitles {
@@ -13,15 +12,15 @@
 
 .headerImg {
     width: 100%;
-    height: 350px;
+    height: 250px;
     border-radius: 4px;
     background-size: cover;
     background-position: center;
-
+    /* opacity: 0.8; */
     background-image: url(../../../public/assets/img6.jpg);
     animation-name: animate;
     animation-timing-function: ease-in-out;
-    animation-duration: 20s;
+    animation-duration: 18s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
 }
@@ -30,13 +29,10 @@
     0%{
         background-image: url(../../../public/assets/img3.jpg);
     }
-    25%{
+    30%{
         background-image: url(../../../public/assets/img4.jpg);
     }
-    50%{
-        background-image: url(../../../public/assets/img5.jpg);
-    }
-    75%{
+    60%{
         background-image: url(../../../public/assets/img6.jpg);
     }
     100%{
@@ -52,6 +48,9 @@
     width: 100%;
 }
 
+.overtext {
+}
+
 .undertext h1 {
     position: absolute;
     color: white;
@@ -59,6 +58,7 @@
     left: 35rem;
     max-width: 300px;
 }
+
 
 @media only screen and (max-width: 1024px) {
     .headerImg {

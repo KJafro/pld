@@ -17,10 +17,14 @@ import { Context } from "./context/Context"
 import Contact from './pages/contact/Contact';
 import Construct from './pages/construct/Construct';
 import Createpodcast from './pages/createPodcast/Createpodcast'
+import { useIsAdmin } from './context/useAdmin'
+import Admin from './pages/admin/Admin'
+
 
 
 function App() {
   const { user } = useContext(Context);
+  const isAdmin  = useIsAdmin()
 
   return (
 <HashRouter> 
@@ -31,8 +35,8 @@ function App() {
           <Route exact path="/construct" element={<Construct/>} />
           <Route path="/register" element={user ? <Home /> : <Register/>} />
           <Route path="/login" element={user ? <Home /> : <Login/>} />
-          <Route path="/write" element={user ? <Write /> : <Register/>} />
-          <Route path="/settings" element={user ? <Settings/> : <Register/>} />
+          <Route path="/write" element={isAdmin ? <Write /> : <Login/>} />
+          <Route path="/settings" element={user ? <Settings/> : <Login/>} />
           <Route path="/post/:postId" element={<Single/>} />
           <Route path="/podcast/:podcastId" element={<SinglePodcast/>} />
           <Route exact path="/about" element={<About/>} />
@@ -40,7 +44,8 @@ function App() {
           <Route exact path="/contact" element={<Contact/>} />
           <Route exact path="/contactsuccess" element={<ContactSuccess/>} />
           <Route exact path="/podcast" element={<Podcast/>} />
-          <Route exact path="/createpodcast" element={user ? <Createpodcast /> : <Register/>} />
+          <Route exact path="/createpodcast" element={isAdmin ? <Createpodcast /> : <Login/>} />
+          <Route exact path="/admin" element={isAdmin ? <Admin /> : <Login/>} />
         </Routes>
     </HashRouter>
   );

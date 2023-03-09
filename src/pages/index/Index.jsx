@@ -29,8 +29,8 @@ export default function Index() {
                 .start();
               }}/>
               <p>We live our lives in a continuous now. You cannot go even two seconds into the past
-                or even two seconds into the future. Our being is always now.
-              </p>
+                or even two seconds into the future.</p>
+                <p>Our being is always now.</p>
               <Link to="/blog"><button className="blogbtn" type="submit">Blog</button></Link>
               <Link to="/podcast"><button className="podcastbtn" type="submit">Podcast</button></Link>
               <div className="typewriter">

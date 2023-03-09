@@ -85,7 +85,7 @@ export default function SinglePost() {
                 </span>
                 
                 
-                <span className="singlePostDate">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
+                <span className="singlePostDate">{moment(post.createdAt).format('MMMM Do YYYY | h:mm a')}</span>
             </div>
             {updateMode ? (<textarea className="singlePostDescInput" value={desc} onChange={(e)=>setDesc(e.target.value)}/>) : 
             (<p className="singlePostDesc">

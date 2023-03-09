@@ -3,8 +3,11 @@ import "./createpodcast.css"
 import { axiosInstance } from "../../config";
 import { Context } from './../../context/Context';
 import { useContext } from "react";
-import TopBar from "../../components/topbar/TopBar"
-import { FaQuestion } from "react-icons/fa"
+import TopBarPodcast from "../../components/topbar/TopBarPodcast"
+import PodcastModal from "../../components/modal/PodcastModal"
+import React from 'react';
+
+
 
 export default function Createpodcast() {
   const [title, setTitle] = useState("")
@@ -51,17 +54,27 @@ export default function Createpodcast() {
       setLoading(false)
     }
   };
+
+
   return (
     <>
-    <TopBar/>
+    <TopBarPodcast/>
     <div className="writeContainer">
-      <div className="right">
+    <div className="leftWrite">
+      <div className="leftBackground">
+        <div className="leftTitle">
+        ADD PODCAST
+      </div>
+      </div>
+      </div>
+      <div className="rightWrite">
     <div className="write">
-      <h1 className="h1Write">Create Podcast</h1>
+    <p className="writePContact">Click the link below for instructions</p>
       {file && <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
       }
         <form className="writeForm" onSubmit={handleSubmit}>
             <div className="writeFormGroup">
+            <PodcastModal/>
                 <label htmlFor="fileInput">
                 {/* <i className="writeIcon fa-sharp fa-solid fa-plus"></i> */}
                 </label>
@@ -69,8 +82,8 @@ export default function Createpodcast() {
                 <input type="text" placeholder="Title" className="writeInput" autoFocus={true} onChange={e=>setTitle(e.target.value)}/>
             </div>
             <div className="writeFormGroup">
-            <input type="text" className ="writeInput" placeholder="Image Link" onChange={e=>setPhoto(e.target.value)}/>
-                <textarea placeholder="Write your post..." type="text" className="writeInput writeText" onChange={e=>setDesc(e.target.value)}></textarea>
+            <input type="text" className ="writeInput" placeholder="Spotify Link" onChange={e=>setPhoto(e.target.value)}/>
+                <textarea placeholder="Podcast description..." type="text" className="writeInput writeText" id="podcastTxt" onChange={e=>setDesc(e.target.value)}></textarea>
                 <button className="writeSubmit" type="submit">{loading ? ("Adding Podcast...") : "Submit"}</button>
                 {error?
           <label className="errortxt" style={{ color: "red", textAlign: "center", marginTop: "20px", fontSize: "20px" }}>Please fill all available fields</label>:""}

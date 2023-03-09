@@ -53,6 +53,7 @@ export default function Register() {
             />
             <button className="registerButton" type="submit">{loading ? ("Registering...") : "Register"}</button>
             {error && <span style={{color: "red", marginTop:"10px", textAlign:"center"}}>Please fill in all fields!</span>}
+            <p className="existingAcc">Already have an account? Log in <Link className="links" to ="/login">here</Link></p>
         </form>
         {/* <button className="registerLoginButton">
         <Link className="link" to="/login">Login</Link>

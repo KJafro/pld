@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
-import "./topbar.css";
+import "./topbarpodcast.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faSpotify, faInstagram, faInstagramSquare } from "@fortawesome/free-brands-svg-icons"
 import { FaTimes, FaBars} from "react-icons/fa"
@@ -33,12 +33,11 @@ export default function TopBar() {
       </div>
       <div className="topCenter">
         <ul className="topList" ref={navRef}>
-          <li className="topListItem"><Link className="link" to="/blog">HOME</Link></li>
-          <li className="topListItem"><Link className="link" to="/podcast">PODCAST</Link></li>
-          <li className="topListItem"><Link className="link" to="/about">ABOUT</Link></li>
-          <li className="topListItem"><Link className="link" to="/contact">CONTACT</Link></li>
-          <li className="topListItem"><Link className="link" to="/write">ADD BLOG</Link></li>
-          <li className="topListItem" onClick={handleLogout}>{user && "LOGOUT"}</li>
+          <li className="topListItemPodcast"><Link className="link" to="/podcast">PODCAST</Link></li>
+          <li className="topListItemPodcast"><Link className="link" to="/blog">BLOG</Link></li>
+          <li className="topListItemPodcast"><Link className="link" to="/about">ABOUT</Link></li>
+          <li className="topListItemPodcast"><Link className="link" to="/contact">CONTACT</Link></li>
+          <li className="topListItemPodcast" onClick={handleLogout}>{user && "LOGOUT"}</li>
           <button className ="nav-btn nav-close-btn" onClick={hideNavbar}>
           <FaTimes />
           </button>
@@ -51,8 +50,8 @@ export default function TopBar() {
         {user ? (<Link to="/settings"><img className="topImg" src={user.profilePic ? user.profilePic : <Avatar/>} alt="" />
             {/* <img className="topImg" src={PF+user.profilePic} alt="" /> */}</Link>) : (
 <ul className="topList">
-            <li className="topListItem"><Link className="link" to="/login">LOGIN</Link></li>
-            <li className="topListItem"><Link className="link" to="/register">REGISTER</Link></li>
+            <li className="topListItemPodcast"><Link className="link" to="/login">LOGIN</Link></li>
+            <li className="topListItemPodcast"><Link className="link" to="/register">REGISTER</Link></li>
 </ul>
         )}
         {/* <i className="topSearchIcon fas fa-search"></i> */}

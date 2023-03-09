@@ -24,7 +24,7 @@
     justify-content: space-between;
     height: 80px;
     padding: 0 2rem;
-    flex: 6;  
+    flex: 7;  
 }
 
 .nav-btn {
@@ -110,7 +110,8 @@
         gap: 1.5rem;
         transform: translateY(-100vh);
         background-color: white;
-        opacity: 0.9;
+        opacity: 1;
+        border-radius: 4px;
     }
 
     .topList a {}
@@ -147,4 +148,10 @@
         justify-content: center;
     }
 
+}
+
+@media screen and (min-width: 1025px)and (max-width: 1240px) {
+    .topListItem {
+        font-size: 13.5px;
+    }
 }

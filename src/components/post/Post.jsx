@@ -1,6 +1,7 @@
 import "./post.css"
 import {Link} from "react-router-dom"
 import { Fade } from "react-awesome-reveal";
+import LazyLoad from 'react-lazy-load';
 
 export default function Post({post}) {
   let moment = require ('moment');
@@ -10,7 +11,7 @@ export default function Post({post}) {
 <div className="postFront">
       {post.photo && (
         // <img class="postImg" src={PF + post.photo/} alt="" />
-        <Link to = {`/post/${post._id}`} className="link"><img class="postImg" src={post.photo} alt="" /></Link>
+        <Link to = {`/post/${post._id}`} className="link"><LazyLoad offset={300}><img class="postImg" src={post.photo} alt="" /></LazyLoad></Link>
       )}
         <div className="postInfo">
             {/* <div className="postCats">{
@@ -23,7 +24,8 @@ export default function Post({post}) {
             <span className="postTitle">{post.title}
             </span>
             </Link>
-        <span className="postDate">{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
+        <span className="postDate">{moment(post.createdAt).format('MMMM Do YYYY | h:mm a')}</span>
+        <p className="postBy">Posted by: {post.username}</p>
         </div>
         <p className="postDesc">{post.desc}</p>
     </div>

@@ -1,5 +1,5 @@
 import "./singlepodcast.css"
-import TopBar from "../../components/topbar/TopBar";
+import TopBarPodcast from "../../components/topbar/TopBarPodcast"
 import { useEffect } from 'react';
 import SinglePodcast from '../../components/singlePodcasts/SinglePodcast';
 
@@ -10,7 +10,7 @@ export default function SinglePodcasts() {
   return (
     <>
     <div className="single">
-      <TopBar/>
+      <TopBarPodcast/>
     </div>
     <div className="podcast">
       <SinglePodcast/>

@@ -38,13 +38,25 @@
     width: 300px;
     background-position: center;
     flex: 0.7;
-    border-radius: 3px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px 2px;
 }
 
 .registerRight {
     flex: 1;
     display: flex;
     justify-content: center;
+}
+
+.existingAcc {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.links {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .registerTitle {

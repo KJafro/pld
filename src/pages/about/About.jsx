@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faSpotify, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import Typewriter from 'typewriter-effect'
-import TopBar from '../.././components/topbar/TopBar'
+import TopBarGeneral from "../../components/topbar/TopBarGeneral";
+
 
 var app = document.getElementById('app');
 
@@ -18,13 +19,19 @@ export default function About() {
   return (
     <>
     {/* <meta http-equiv="refresh" content="3;url=http://localhost:3000/" /> */}
-    <div className="backgroundcon">
-
-    </div>
-    <TopBar/>
+    <TopBarGeneral/>
     <div className="containerAbout">
-        <h1 className='h1About'>COMING SOON!!!</h1>
+    <div className="leftAbout">
+      <div className="leftBackgroundAbout">
+        <div className="leftTitleAbout">
+        
+      </div>
+      </div>
+      </div>
+      <div className="rightAbout">
+        <h1 className='h1About'>COMING SOON</h1>
         {/* <h3>PROGRESS</h3> */}
+    </div>
     </div></>
   )
 }

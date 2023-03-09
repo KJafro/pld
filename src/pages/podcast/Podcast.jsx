@@ -4,7 +4,7 @@ import Podcasts from "../../components/podcasts/Podcasts"
 import "./podcast.css"
 import { axiosInstance } from "../../config"
 import { useLocation } from "react-router"
-import TopBar from "../../components/topbar/TopBar"
+import TopBarPodcast from "../../components/topbar/TopBarPodcast"
 
 export default function Podcast() {
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function Podcast() {
   },[search])
   return (
     <>
-    <TopBar/>
+    <TopBarPodcast/>
       <Header />
       <div className="home">
         <Podcasts podcasts={podcasts}/>

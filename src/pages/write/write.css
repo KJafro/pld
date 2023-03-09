@@ -1,5 +1,9 @@
 .write {
     padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .writeContainer {
@@ -10,6 +14,7 @@
     animation-fill-mode: forwards;
 }
 
+
 @keyframes fadeInWrite {
 0% {
 opacity: 0;
@@ -19,9 +24,21 @@ opacity: 1;
 }
 }
 
+.leftWriteBlog {
+    flex: 0.7;
+    background-image: url(../../../public/assets/other2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
-.right {
-    flex: 2;
+
+.rightWrite {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 }
 
 
@@ -40,6 +57,7 @@ opacity: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    white-space: pre-line;
 }
 
 .writeIcon {
@@ -58,7 +76,7 @@ opacity: 1;
 .writeInput {
     font-size: 22px;
     padding: 10px;
-    width: 50vw;
+    width: 80vw;
     border-radius: 10px;
     margin-top: 10px;
     font-family: "Lora";
@@ -74,6 +92,11 @@ opacity: 1;
 .writeText {
     font-size: 20px;
     height: 30vh;
+    white-space: pre-line;
+}
+
+.writeText {
+    text-align: start;
 }
 
 .writeInput-writeText {
@@ -111,6 +134,11 @@ opacity: 1;
     font-weight: 500;
 }
 
+.writePContact {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 
 
 @media only screen and (max-width: 1024px) {
@@ -125,6 +153,12 @@ opacity: 1;
     }
     .writeContainer {
         flex-direction: column;
+    }
+    .leftWrite {
+        flex: 0.4;
+    }
+    .leftBackground {
+        box-shadow: 2px 2px 22px 2px black;
     }
 }
 

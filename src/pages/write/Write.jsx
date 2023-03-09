@@ -56,9 +56,16 @@ export default function Write() {
     <>
     <TopBar/>
     <div className="writeContainer">
-      <div className="right">
+      <div className="leftWriteBlog">
+      <div className="leftBackground">
+        <div className="leftTitle">
+        CREATE POST
+      </div>
+      </div>
+      </div>
+      <div className="rightWrite">
     <div className="write">
-      <h1 className="h1Write">Create Post</h1>
+      <p className="writePContact">Click the link below for instructions</p>
       {file && <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
       }
         <form className="writeForm" onSubmit={handleSubmit}>
