@@ -17,7 +17,7 @@
     background-size: cover;
     background-position: center;
     /* opacity: 0.8; */
-    background-image: url(../../../public/assets/img6.jpg);
+    background-image: url(../../../public/assets/img3.jpg);
     animation-name: animate;
     animation-timing-function: ease-in-out;
     animation-duration: 18s;
@@ -33,7 +33,7 @@
         background-image: url(../../../public/assets/img4.jpg);
     }
     60%{
-        background-image: url(../../../public/assets/img6.jpg);
+        background-image: url(../../../public/assets/css.jpg);
     }
     100%{
         background-image: url(../../../public/assets/img3.jpg);
