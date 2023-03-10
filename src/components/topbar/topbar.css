@@ -24,7 +24,7 @@
     justify-content: space-between;
     height: 80px;
     padding: 0 2rem;
-    flex: 7;  
+    flex: 12;  
 }
 
 .nav-btn {
@@ -55,6 +55,7 @@
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
+    /* margin-left: 100px; */
 }
 
 .topImg:hover {
@@ -92,6 +93,7 @@
 
 @media only screen and (max-width: 1024px) {
     .nav-btn {
+        display: flex;
         visibility: visible;
         opacity: 1;
     }
@@ -109,10 +111,12 @@
         transition: 1s;
         gap: 1.5rem;
         transform: translateY(-100vh);
+        /* background-color: rgb(213, 213, 218); */
         background-color: white;
         opacity: 1;
         border-radius: 4px;
     }
+
 
     .topList a {}
 
@@ -135,7 +139,7 @@
     .topCenter {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         height: 80px;
         padding: 0 2rem;
         flex: 1;
@@ -145,8 +149,14 @@
         flex: 6;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        margin-left: 5px;
     }
+
+    .topRight {
+        justify-content: flex-end;
+    }
+    
 
 }
 
