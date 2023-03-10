@@ -135,7 +135,7 @@ margin: auto;
 }
 
 .settingsSubmit:hover {
-    outline: 2px solid rgb(81, 162, 224);
+    background-color: rgb(101, 175, 175);
 }
 
 .welcomeName {

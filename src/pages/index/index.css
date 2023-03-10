@@ -46,8 +46,8 @@
   padding: 8px;
   cursor: pointer;
   color: white;
-  background-color: rgb(49, 138, 206);
-  border-radius: 5px;
+  background-color: rgb(84, 149, 199);
+  border-radius: 44px;
   font-weight: bold;
   opacity: 0;
   animation-name: blogbtn;
@@ -55,7 +55,7 @@
   animation-delay: 4.5s;
   animation-fill-mode: forwards;
   margin-right: 5px;
-  width: 90px;
+  width: 110px;
   font-size: 1em;
 }
 
@@ -69,9 +69,9 @@
   padding: 8px;
   cursor: pointer;
   color: white;
-  background-color: rgb(49, 138, 206);
-  width: 90px;
-  border-radius: 5px;
+  background-color: rgb(84, 149, 199);
+  width: 110px;
+  border-radius: 44px;
   font-weight: bold;
   opacity: 0;
   animation-name: podcastbtn;
@@ -88,11 +88,11 @@
 
 
 .blogbtn:hover {
-  background-color: rgb(84, 154, 207);
+  background-color: rgb(65, 141, 199);
 }
 
 .podcastbtn:hover {
-  background-color: rgb(84, 154, 207);
+  background-color: rgb(65, 141, 199);
 }
 
 .typewriter {
