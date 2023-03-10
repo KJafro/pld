@@ -30,7 +30,6 @@ export default function Contact() {
       <div className="leftContact">
       <div className="leftBackground">
         <div className="leftTitle">
-        CONTACT US
       </div>
       </div>
       </div>

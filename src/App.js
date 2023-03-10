@@ -19,6 +19,7 @@ import Construct from './pages/construct/Construct';
 import Createpodcast from './pages/createPodcast/Createpodcast'
 import { useIsAdmin } from './context/useAdmin'
 import Admin from './pages/admin/Admin'
+import Updates from './pages/updates/Updates'
 
 
 
@@ -46,6 +47,7 @@ function App() {
           <Route exact path="/podcast" element={<Podcast/>} />
           <Route exact path="/createpodcast" element={isAdmin ? <Createpodcast /> : <Admin/>} />
           <Route exact path="/admin" element={isAdmin ? <Admin /> : <Login/>} />
+          <Route exact path="/updates" element={isAdmin ? <Updates /> : <Login/>} />
         </Routes>
     </HashRouter>
   );
