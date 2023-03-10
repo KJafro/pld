@@ -35,7 +35,7 @@ function App() {
           <Route exact path="/construct" element={<Construct/>} />
           <Route path="/register" element={user ? <Home /> : <Register/>} />
           <Route path="/login" element={user ? <Home /> : <Login/>} />
-          <Route path="/write" element={isAdmin ? <Write /> : <Login/>} />
+          <Route path="/write" element={isAdmin ? <Write /> : <Admin/>} />
           <Route path="/settings" element={user ? <Settings/> : <Login/>} />
           <Route path="/post/:postId" element={<Single/>} />
           <Route path="/podcast/:podcastId" element={<SinglePodcast/>} />
@@ -44,7 +44,7 @@ function App() {
           <Route exact path="/contact" element={<Contact/>} />
           <Route exact path="/contactsuccess" element={<ContactSuccess/>} />
           <Route exact path="/podcast" element={<Podcast/>} />
-          <Route exact path="/createpodcast" element={isAdmin ? <Createpodcast /> : <Login/>} />
+          <Route exact path="/createpodcast" element={isAdmin ? <Createpodcast /> : <Admin/>} />
           <Route exact path="/admin" element={isAdmin ? <Admin /> : <Login/>} />
         </Routes>
     </HashRouter>
