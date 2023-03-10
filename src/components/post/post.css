@@ -103,9 +103,8 @@
 @media screen and (max-width: 850px) {
     .postFront {
       width: 100%;
-      margin: 0px 25px 40px 10px;
+      margin: 0px 5px 40px 5px;
       margin-bottom: 30px;
-      margin-right: 20px;
     }
 }
 
