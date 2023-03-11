@@ -30,6 +30,10 @@ export default function Updates() {
           <h4 className='h4Updates'>Complete the 'About' section page with the relevant information.
           <hr className='hrUpdates'/>
           </h4>
+          <h2 className='h2Updates'>4</h2>
+          <h4 className='h4Updates'>Make the 'About' and 'Contact' page more appealing.
+          </h4>
+
         </div>
     </div>
     </div></>
