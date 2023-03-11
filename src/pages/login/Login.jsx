@@ -49,6 +49,7 @@ export default function Login() {
             <input type="password" className="loginInput" placeholder="Enter your Password" ref={passwordRef}/>
             <button className="loginButton" type="submit">{loading ? ("Logging in...") : "Login"}</button>
             {error && <span style={{color: "red", marginTop:"10px"}}>Incorrect Password</span>}
+            <p className="existingAcc">Don't have an account? Sign up <Link className="links" to ="/register">here</Link></p>
         </form>
     </div>
     </div>

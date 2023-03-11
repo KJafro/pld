@@ -40,13 +40,15 @@ export default function TopBar() {
           <li className="topListItem"><Link className="link" to="/about">ABOUT</Link></li>
           <li className="topListItem"><Link className="link" to="/contact">CONTACT</Link></li>
           <li className="topListItem"><Link className="link" to="/write">ADD BLOG</Link></li>
-          {isAdmin && <li className="topListItem"><Link className="link" to="/write">UPDATES</Link></li>}
+          {!user && <li className="StopListItem"><Link className="link" to="/login">ACCOUNT</Link></li>}
+          {isAdmin && <li className="topListItem"><Link className="link" to="/updates">UPDATES</Link></li>}
           <li className="topListItem" onClick={handleLogout}>{user && "LOGOUT"}</li>
           <button className ="nav-btn nav-close-btn" onClick={hideNavbar}>
           <FaTimes />
           </button>
           </ul>
       </div>
+      <div className="topRight">
       {user ? (<Link to="/settings"><img className="topImg" src={user.profilePic ? user.profilePic : <Avatar/>} alt="" />
             {/* <img className="topImg" src={PF+user.profilePic} alt="" /> */}</Link>) : (
 <ul className="topList">
@@ -54,7 +56,6 @@ export default function TopBar() {
             <li className="topListItem"><Link className="link" to="/register">REGISTER</Link></li>
 </ul>
         )}
-      <div className="topRight">
       <button className ="nav-btn" onClick={showNavbar}>
           <FaBars />
           </button>

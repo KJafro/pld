@@ -11,7 +11,7 @@ export default function Post({post}) {
 <div className="postFront">
       {post.photo && (
         // <img class="postImg" src={PF + post.photo/} alt="" />
-        <Link to = {`/post/${post._id}`} className="link"><LazyLoad offset={100}><img class="postImg" src={post.photo} alt="" /></LazyLoad></Link>
+        <Link to = {`/post/${post._id}`} className="link"><LazyLoad offset={300}><img class="postImg" src={post.photo} alt="" /></LazyLoad></Link>
       )}
         <div className="postInfo">
             {/* <div className="postCats">{

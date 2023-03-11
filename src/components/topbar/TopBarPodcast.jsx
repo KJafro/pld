@@ -7,11 +7,13 @@ import { faFacebook, faTwitter, faSpotify, faInstagram, faInstagramSquare } from
 import { FaTimes, FaBars} from "react-icons/fa"
 import { useRef } from "react";
 import Avatar from '@mui/material/Avatar';
+import { useIsAdmin } from './../../context/useAdmin';
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
   // const PF = "https://everydaybeing.onrender.com/images/"
   const navRef = useRef();
+  const isAdmin  = useIsAdmin()
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav")
   }
@@ -38,6 +40,8 @@ export default function TopBar() {
           <li className="topListItemPodcast"><Link className="link" to="/about">ABOUT</Link></li>
           <li className="topListItemPodcast"><Link className="link" to="/contact">CONTACT</Link></li>
           <li className="topListItemPodcast"><Link className="link" to="/createpodcast">ADD PODCAST</Link></li>
+          {!user && <li className="StopListItem"><Link className="link" to="/login">ACCOUNT</Link></li>}
+          {isAdmin && <li className="topListItem"><Link className="link" to="/updates">UPDATES</Link></li>}
           <li className="topListItemPodcast" onClick={handleLogout}>{user && "LOGOUT"}</li>
           <button className ="nav-btn nav-close-btn" onClick={hideNavbar}>
           <FaTimes />
@@ -45,9 +49,6 @@ export default function TopBar() {
           </ul>
       </div>
       <div className="topRight">
-      <button className ="nav-btn" onClick={showNavbar}>
-          <FaBars />
-          </button>
         {user ? (<Link to="/settings"><img className="topImg" src={user.profilePic ? user.profilePic : <Avatar/>} alt="" />
             {/* <img className="topImg" src={PF+user.profilePic} alt="" /> */}</Link>) : (
 <ul className="topList">
@@ -55,6 +56,9 @@ export default function TopBar() {
             <li className="topListItemPodcast"><Link className="link" to="/register">REGISTER</Link></li>
 </ul>
         )}
+              <button className ="nav-btn" onClick={showNavbar}>
+          <FaBars />
+          </button>
         {/* <i className="topSearchIcon fas fa-search"></i> */}
       </div>
     </div>
