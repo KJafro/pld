@@ -11,7 +11,7 @@ export default function Updates() {
         <div className="mainUpdates">
           <h2 className='h2Updates'>1</h2>
           <h4 className='h4Updates'>Implement a rich text editor for better formatting for
-            the blog and podcast description, as of <br></br>right now there is
+            the blog and podcast description, as of right now there is
             limited formatting. This will make the description much easier
             to read.
           </h4>
@@ -20,7 +20,7 @@ export default function Updates() {
           <hr className='hrUpdates'/>
           <h2 className='h2Updates'>2</h2>
           <h4 className='h4Updates'>Implement the ability to upload images from your disk,
-            this will save time but may slow down the <br></br>website as they will need to
+            this will save time but may slow down the website as they will need to
             be stored in the cloud.
           </h4>
           <h4 className='h4Updates'>An example:</h4>
