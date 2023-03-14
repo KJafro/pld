@@ -25,7 +25,7 @@ export default function Podcast({podcast}) {
             <Link to = {`/podcast/${podcast._id}`} className="link">
             <p className="podcastTitle">{podcast.title}
             </p>
-            <p className="podcastDate">{moment(podcast.createdAt).format('MMMM Do YYYY | h:mm a')}</p>
+            <p className="podcastDate">{moment(podcast.createdAt).format('Do MMMM YYYY | h:mm a')}</p>
             <p className="podcastDesc">{podcast.desc}</p>
             </Link>
             {/* <p className="podcastUser">{podcast.username}</p> */}

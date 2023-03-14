@@ -1,0 +1,23 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.page-item {
+    display: flex;
+}
+
+.page-link {
+    color: rgb(43, 105, 213);
+    padding: 8px;
+    border-radius: 4px;
+    width: 35px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.page-link:hover {
+    background-color: white;
+    color: rgb(11, 77, 177);
+}
