@@ -12,6 +12,7 @@ var typewriter = new Typewriter(app, {
     loop: false
 });
 
+
 export default function About() {
 
 
@@ -29,8 +30,22 @@ export default function About() {
       </div>
       </div>
       <div className="rightAbout">
-        <h1 className='h1About'>COMING SOON</h1>
-        {/* <h3>PROGRESS</h3> */}
+        <div className="rightAboutText">
+          
+      
+
+        <h4>In our podcast and blog posts, we are exploring an understanding of
+          how our human experience is created and the relationship between who we
+          are 'being' and what we are 'doing'.</h4><br></br>
+
+          <h4>We consider the implications of this understanding for the way that
+            we live and navigate our everyday experience. We do this through looking
+            at different aspects of the human experience from things like mental health,
+            relationships, what we do and do not control in life and everything in between.
+          </h4><br></br>
+
+          <h4>Our intention is to make this practical and relatable in your own experience</h4>
+          </div>
     </div>
     </div></>
   )

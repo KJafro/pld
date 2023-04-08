@@ -18,6 +18,20 @@ export default function SinglePost() {
   const [updateMode, setUpdateMode] = useState(false)
   let moment = require ('moment');
 
+  function abFun () {
+    let div = document.getElementById('okdiv').value;
+    let pp = document.createElement('h2')
+    pp.setAttribute = ('id', 'isd')
+    pp.appendChild(div)
+    console.log(div)
+    if (div.length < 8) {
+      let disp = document.createTextNode('Success')
+      disp.appendChild(div)
+    } else {
+      let disp = document.createTextNode('Fail')
+    }
+  }
+
   useEffect(() => {
     const getPost = async () => {
       const res = await axiosInstance.get("/posts/" + path)

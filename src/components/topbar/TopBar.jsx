@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./topbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faTwitter, faSpotify, faInstagram, faInstagramSquare } from "@fortawesome/free-brands-svg-icons"
+import { faFacebook, faTwitter, faSpotify, faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons"
 import { FaTimes, FaBars} from "react-icons/fa"
 import { useRef } from "react";
 import Avatar from '@mui/material/Avatar';
@@ -28,8 +28,8 @@ export default function TopBar() {
   return (
     <div className="top">
       <div className="topLeft">
-      <FontAwesomeIcon icon={faFacebook} className="topIcon"></FontAwesomeIcon>
-        <FontAwesomeIcon icon={faTwitter} className="topIcon"></FontAwesomeIcon>
+      <Link to="https://www.tiktok.com/@everydaybeing/"><FontAwesomeIcon icon={faTiktok} className="topIcon"></FontAwesomeIcon></Link>
+        <Link to="https://twitter.com/EverydayBeing01/"><FontAwesomeIcon icon={faTwitter} className="topIcon"></FontAwesomeIcon></Link>
         <Link to="https://open.spotify.com/show/5ZLCIJR0FHZLIREjPoTACy/"><FontAwesomeIcon icon={faSpotify} className="topIcon"></FontAwesomeIcon></Link>
         <Link to="https://instagram.com/everyday.being?igshid=YmMyMTA2M2Y="><FontAwesomeIcon icon={faInstagram} className="topIcon"></FontAwesomeIcon></Link>
       </div>
