@@ -152,6 +152,21 @@ margin: auto;
     }
 }
 
+@media only screen and (max-height: 700px) {
+    .settingsUpdateTitle {
+        font-size: 26px
+    }
+    .settingsForm input {
+        width: 820vw;
+    }
+    .settings {
+        height: auto;
+    }
+    .settingsSubmit {
+        margin-bottom: 10px;
+    }
+}
+
 
 @media screen and (min-width: 701px) and (max-width: 1024px) {
     .settingsForm input {

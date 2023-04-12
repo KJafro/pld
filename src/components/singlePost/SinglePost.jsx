@@ -93,9 +93,9 @@ export default function SinglePost() {
             }
             <div className="singlePostInfo">
                 <span className="singlePostAuthor">Author: 
-                <Link to={`/${post.username}`} className="link">
+                {/* <Link to={`/${post.username}`} className="link"> */}
                    <b> {post.username}</b>
-                  </Link>
+                  {/* </Link> */}
                 </span>
                 
                 

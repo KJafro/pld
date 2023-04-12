@@ -81,9 +81,9 @@ export default function SinglePodcasts() {
             }
             <div className="singlePodcastInfo">
                 <span className="singlePodcastAuthor">Author: 
-                <Link to={`/${podcast.username}`} className="link">
+                {/* <Link to={`/${podcast.username}`} className="link"> */}
                    <b> {podcast.username}</b>
-                  </Link>
+                  {/* </Link> */}
                 </span>
                 
                 
