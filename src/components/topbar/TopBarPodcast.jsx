@@ -41,7 +41,6 @@ export default function TopBar() {
           <li className="topListItemPodcast"><Link className="link" to="/contact">CONTACT</Link></li>
           <li className="topListItemPodcast"><Link className="link" to="/createpodcast">ADD PODCAST</Link></li>
           {!user && <li className="StopListItem"><Link className="link" to="/login">ACCOUNT</Link></li>}
-          {isAdmin && <li className="topListItem"><Link className="link" to="/updates">UPDATES</Link></li>}
           <li className="topListItemPodcast" onClick={handleLogout}>{user && "LOGOUT"}</li>
           <button className ="nav-btn nav-close-btn" onClick={hideNavbar}>
           <FaTimes />

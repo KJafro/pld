@@ -40,8 +40,9 @@ export default function TopBar() {
           <li className="topListItem"><Link className="link" to="/about">ABOUT</Link></li>
           <li className="topListItem"><Link className="link" to="/contact">CONTACT</Link></li>
           <li className="topListItem"><Link className="link" to="/write">ADD BLOG</Link></li>
-          {!user && <li className="StopListItem"><Link className="link" to="/login">ACCOUNT</Link></li>}
-          {isAdmin && <li className="topListItem"><Link className="link" to="/updates">UPDATES</Link></li>}
+          {!user && <li className="StopListItem"><Link className="link" to="/subscribe">ACCOUNT</Link></li>}
+          <li className="topListItem"><Link className="link" to="/subscribe">SUBSCRIBE</Link></li>
+
           <li className="topListItem" onClick={handleLogout}>{user && "LOGOUT"}</li>
           <button className ="nav-btn nav-close-btn" onClick={hideNavbar}>
           <FaTimes />

@@ -9,6 +9,7 @@
       content="Web site created using create-react-app"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel ="preload" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500&family=Lora:ital@0;1&family=Allura&family=Sofia&family=Varela&family=Varela+Round&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript>
@@ -30,4 +31,15 @@
     <div id="root"></div>
 
   </body>
+  <script>
+        if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./serviceWorker.js').then((reg) => {
+          console.log("Worker Registered")
+        }).catch((err) => {
+          console.log('ERROR!!!', err)
+        })
+      })
+    }
+  </script>
 </html>
