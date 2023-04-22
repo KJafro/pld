@@ -1,10 +1,4 @@
-import React from 'react'
-import { axiosInstance } from "../../config"
-import TopBar from '../../components/topbar/TopBar'
-
-export default function Subscribe() {
-
-  const publicVapidKey =
+const publicVapidKey =
   "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
 
 if ("serviceWorker" in navigator) {
@@ -49,29 +43,4 @@ function urlBase64ToUint8Array(base64String) {
     outputArray[i] = rawData.charCodeAt(i);
   }
   return outputArray;
-}
-
-
-  const subScribe = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axiosInstance.post("/subscribe", {
-      });
-console.log(res)
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-
-
-  return (
-    <>
-    <TopBar/>
-    <div>Subscribe</div>
-    <form className="registerForm" onSubmit={subScribe}>
-    <button className="registerButton" type="submit">Sub</button>
-    </form>
-    </>
-  )
 }
