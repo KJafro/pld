@@ -25,8 +25,8 @@ async function send() {
   });
   console.log("Push Registered!");
 
-  console.log("Sending Push!");
-  await fetch("/subscribe", {
+  console.log("Sending Push!!!");
+  await fetch("https://everydaybeing.onrender.com/subscribe", {
     method: "POST",
     body: JSON.stringify(subscription),
     headers: {
