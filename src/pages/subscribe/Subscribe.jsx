@@ -63,10 +63,15 @@ export default function Subscribe() {
 //     }
 //   }
 
-addEventListener('load', async () => {
+async function regi () {
   let sw = await navigator.serviceWorker.register('./sw.js')
   console.log(sw)
-})
+}
+
+// addEventListener('load', async () => {
+//   let sw = await navigator.serviceWorker.register('./sw.js')
+//   console.log(sw)
+// })
 
 
 async function subscribe() {
@@ -88,6 +93,7 @@ subscribe()
     <div>Subscribe</div>
     <form className="registerForm">
     <button className="registerButton" type="submit">Sub</button>
+    <button className="registerButton" type="submit" onClick={regi()}>Register</button>
     <div id='result'>ss</div>
     </form>
     </>
