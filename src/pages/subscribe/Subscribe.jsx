@@ -5,7 +5,7 @@ import TopBar from '../../components/topbar/TopBar'
 export default function Subscribe() {
 
   const publicVapidKey =
-  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
+  "BJS9nbbpOTGKcGUeXS8oVw5tzcsapDY0Dc28qUQhayBI19-cCcBanEl6VQYJ6wePLaDn0WbVABMpF_pgTZ9oyBA";
 
 if ("serviceWorker" in navigator) {
   send().catch(err => console.error(err));
@@ -18,12 +18,15 @@ async function send() {
   });
   console.log("Service Worker Registered!");
 
+  
+
   console.log("Registering Push!");
   const subscription = await register.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
   console.log("Push Registered!");
+  console.log(JSON.stringify(subscription))
 
   console.log("Sending Push!!!");
   await fetch("https://everydaybeing.onrender.com/subscribe", {
