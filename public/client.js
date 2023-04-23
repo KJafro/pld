@@ -1,5 +1,5 @@
 const publicVapidKey =
-  "BJS9nbbpOTGKcGUeXS8oVw5tzcsapDY0Dc28qUQhayBI19-cCcBanEl6VQYJ6wePLaDn0WbVABMpF_pgTZ9oyBA";
+  "BEhJsPGSEKi8fLuIOZ_xk0ZuO3OrXpolJ6GhHYFsSpcQHzI8_73AxvUipHmg9OvqouJta6pmHNqI7RoS5f_rn2g";
 
 if ("serviceWorker" in navigator) {
   send().catch(err => console.error(err));
@@ -7,7 +7,7 @@ if ("serviceWorker" in navigator) {
 
 async function send() {
   console.log("Registering Worker!");
-  const register = await navigator.serviceWorker.register("/worker.js", {
+  const register = await navigator.serviceWorker.register("/service-worker.js", {
     scope: "/"
   });
   console.log("Service Worker Registered!");
