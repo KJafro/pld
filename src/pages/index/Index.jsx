@@ -4,16 +4,6 @@ import {Link} from "react-router-dom";
 import { useEffect } from "react";
 import Typewriter from 'typewriter-effect'
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./serviceWorker.js').then((reg) => {
-      console.log("Worker Registered")
-    }).catch((err) => {
-      console.log('ERROR!!!', err)
-    })
-  })
-}
-
 var app = document.getElementById('app');
 
 var typewriter = new Typewriter(app, {
