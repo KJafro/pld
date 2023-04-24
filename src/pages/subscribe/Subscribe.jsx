@@ -5,7 +5,7 @@ import TopBar from '../../components/topbar/TopBar'
 export default function Subscribe() {
 
   const publicVapidKey =
-  "BM0wVQoiwffifZXJTa1aLRyW2Y1roTvqIJatTeo8beWOPF_IAdLbtQp5bzfmAAVBofQm6avPuwBjQ31_ANkLVJE";
+  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
 
 if ("serviceWorker" in navigator) {
   send().catch(err => console.error(err));

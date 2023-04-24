@@ -1,5 +1,5 @@
 const publicVapidKey =
-  "BM0wVQoiwffifZXJTa1aLRyW2Y1roTvqIJatTeo8beWOPF_IAdLbtQp5bzfmAAVBofQm6avPuwBjQ31_ANkLVJE";
+  "BJGjGQ-Cs8cIN7s-I87gIRt8K_oA-90iz4uQT7g0XoIWSq0gOhiCN0l8WwMi-rwWU8JtrpZXZ591ujl1G0nORss";
 
 if ("serviceWorker" in navigator) {
   send().catch(err => console.error(err));
