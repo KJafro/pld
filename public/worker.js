@@ -1,7 +1,7 @@
 console.log("Service Worker Successfully Loaded!YE");
 
 self.addEventListener("push", e => {
-  const data = e.data.json();
+  const data = e.data;
   console.log("Push Recieved!YE");
   self.registration.showNotification(data.title, {
     body: "EDB",
