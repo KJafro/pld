@@ -10,10 +10,15 @@ var typewriter = new Typewriter(app, {
     loop: false
 });
 
+
 export default function Index() {
   useEffect(() => {
     document.title = "Everyday Being | Home"
   }, []);
+
+
+
+  
   return (<>
         <div className="container">
         <div className="video-bg">

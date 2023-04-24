@@ -5,7 +5,7 @@ import TopBar from '../../components/topbar/TopBar'
 export default function Subscribe() {
 
   const publicVapidKey =
-  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
+  "BM0wVQoiwffifZXJTa1aLRyW2Y1roTvqIJatTeo8beWOPF_IAdLbtQp5bzfmAAVBofQm6avPuwBjQ31_ANkLVJE";
 
 if ("serviceWorker" in navigator) {
   send().catch(err => console.error(err));
@@ -51,8 +51,6 @@ function urlBase64ToUint8Array(base64String) {
   }
   return outputArray;
 }
-
-
   const subScribe = async (e) => {
     e.preventDefault();
     try {
