@@ -10,16 +10,16 @@ async function send() {
   const register = await navigator.serviceWorker.register("/worker.js", {
     scope: "/"
   });
-  console.log("Service Worker Registered!");
+  console.log("Service Worker Registered!ZZ");
 
-  console.log("Registering Push!");
+  console.log("Registering Push!ZZ");
   const subscription = await register.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
-  console.log("Push Registered!");
+  console.log("Push Registered!ZZ");
 
-  console.log("Sending Push!");
+  console.log("Sending Push!ZZ");
   await fetch("/subscribe", {
     method: "POST",
     body: JSON.stringify(subscription),
@@ -27,7 +27,7 @@ async function send() {
       "content-type": "application/json"
     }
   });
-  console.log("Push Sent!");
+  console.log("Push Sent!ZZ");
 }
 
 function urlBase64ToUint8Array(base64String) {
