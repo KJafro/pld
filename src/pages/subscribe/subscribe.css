@@ -34,3 +34,8 @@
 #endpointDiv {
     /* width: 1000px; */
 }
+
+.subTitle {
+    text-align: center;
+    font-size: 22px;
+}

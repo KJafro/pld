@@ -94,6 +94,7 @@ console.log(res)
     <div className="subForm">
       {/* <div id="endpointDiv"></div> */}
     <form ref={form} onSubmit={sendEmail} className="writeForm">
+      <div className="subTitle">Press the subscribe button to subscribe to push notifications!</div>
     <textarea placeholder="Enter the endpoint here..." type="text" name="message" className="writeInput writeText" id="endpointDiv" required></textarea><br></br>
     <button className="registerButtonSub" type="submit">Subscribe</button>
     {success && (
