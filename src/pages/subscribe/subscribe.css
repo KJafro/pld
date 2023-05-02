@@ -57,6 +57,6 @@
 @media only screen and (max-width: 1024px) {
     .endpointTextarea {
         height: 20vh;
-        width: 75vh;
+        width: 75vw;
     }
 }
