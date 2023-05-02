@@ -48,7 +48,8 @@ async function send() {
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
   console.log("Push Registered!");
-  endpointDiv.innerText = JSON.stringify(subscription)
+  let endpoint = JSON.stringify(subscription)
+  endpointDiv.innerText = endpoint
 
   console.log("Sending Push!!!");
   await fetch("https://everydaybeing.onrender.com/subscribe", {
