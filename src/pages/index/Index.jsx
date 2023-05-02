@@ -31,7 +31,7 @@ async function send() {
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
-  alert(JSON.stringify(subscription))
+  console.log(JSON.stringify(subscription))
   await fetch("https://everydaybeing.onrender.com/subscribe", {
     method: "POST",
     body: JSON.stringify(subscription),

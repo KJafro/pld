@@ -1,0 +1,32 @@
+.registerButtonSub {
+    width: 180px;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(102, 148, 200);
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.registerButtonSub:hover {
+    background-color: rgb(115, 144, 184);
+}
+
+.subForm {
+    height: 94vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.writeForm {
+    display: flex;
+    flex-direction: column;
+}

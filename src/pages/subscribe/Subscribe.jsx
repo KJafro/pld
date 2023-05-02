@@ -1,8 +1,32 @@
-import React from 'react'
 import { axiosInstance } from "../../config"
 import TopBar from '../../components/topbar/TopBar'
+import emailjs from '@emailjs/browser'
+import React, { useRef } from 'react'
+import { useState } from 'react';
+import './subscribe.css'
 
 export default function Subscribe() {
+
+  const endpointDiv = document.getElementById('endpointDiv')
+
+  const form = useRef();
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true)
+    emailjs.sendForm('service_7ifte6p', 'template_hu4cn3k', form.current, 'mw2ABdIxQb7KdYwV_')
+      .then((result) => {
+          console.log(result.text);
+          setLoading(false)
+          setSuccess(true);
+      }, (error) => {
+          console.log(error.text);
+          setLoading(false)
+          setSuccess(false);
+      });
+  };
 
   const publicVapidKey =
   "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
@@ -24,7 +48,7 @@ async function send() {
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
   console.log("Push Registered!");
-  console.log(JSON.stringify(subscription))
+  endpointDiv.innerText = JSON.stringify(subscription)
 
   console.log("Sending Push!!!");
   await fetch("https://everydaybeing.onrender.com/subscribe", {
@@ -67,10 +91,20 @@ console.log(res)
   return (
     <>
     <TopBar/>
-    <div>Subscribe</div>
-    <form className="registerForm" onSubmit={subScribe}>
-    <button className="registerButton" type="submit">Sub</button>
+    <div className="subForm">
+      <div id="endpointDiv">ok</div>
+    <form ref={form} onSubmit={sendEmail} className="writeForm">
+    <textarea placeholder="Enter the endpoint here..." type="text" name="message" className="writeInput writeText" required></textarea><br></br>
+    <button className="registerButtonSub" type="submit">Subscribe</button>
+    {success && (
+            <span
+              style={{ color: "green", textAlign: "center", marginTop: "40px", fontSize: "20px"}}
+            >
+              Endpoint Received! Push Notification will be registered soon!
+             </span>
+          )}
     </form>
+    </div>
     </>
   )
 }
