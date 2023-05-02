@@ -4,7 +4,7 @@
     border-radius: 4px;
     border: none;
     cursor: pointer;
-    background-color: rgb(102, 148, 200);
+    background-color: rgb(78, 130, 190);
     color: white;
     font-weight: bold;
     display: flex;
@@ -15,7 +15,7 @@
 }
 
 .registerButtonSub:hover {
-    background-color: rgb(115, 144, 184);
+    background-color: rgb(116, 142, 179);
 }
 
 .subForm {

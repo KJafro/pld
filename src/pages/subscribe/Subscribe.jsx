@@ -7,8 +7,6 @@ import './subscribe.css'
 
 export default function Subscribe() {
 
-  const endpointDiv = document.getElementById('endpointDiv')
-
   const form = useRef();
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false);
@@ -48,6 +46,7 @@ async function send() {
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
   console.log("Push Registered!");
+  const endpointDiv = document.getElementById('endpointDiv')
   let endpoint = JSON.stringify(subscription)
   endpointDiv.innerHTML = endpoint
 
