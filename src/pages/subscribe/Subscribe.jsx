@@ -104,6 +104,13 @@ subscribe()
 //     }
 //   }
 
+const handleClick = () => {
+  fetch('https://everydaybeing.onrender.com/run-script')
+    .then((response) => response.text())
+    .then((data) => {
+      console.log(data);
+    });
+};
 
 
   return (
@@ -124,6 +131,7 @@ subscribe()
           )}
     </form>
     </div>
+    <button onClick={handleClick}>Run script</button>
     </>
   )
 }
