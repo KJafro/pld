@@ -9,9 +9,9 @@ self.addEventListener('push', function (e) {
         },
         actions: [
             {action: 'explore', title: 'Explore!',
-                icon: 'images/checkmark.png'},
+                icon: 'checkmark.png'},
                 {action: 'close', title: 'Close',
-                icon: 'images/xmark.png'},
+                icon: 'xmark.png'},
         ]
     };
     e.waitUntil(
