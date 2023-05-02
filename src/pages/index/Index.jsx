@@ -63,16 +63,16 @@ function urlBase64ToUint8Array(base64String) {
   }
   return outputArray;
 }
-  const subScribe = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axiosInstance.post("/subscribe", {
-      });
-console.log(res)
-    } catch (err) {
-      console.log(err)
-    }
-  }
+//   const subScribe = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const res = await axiosInstance.post("/subscribe", {
+//       });
+// console.log(res)
+//     } catch (err) {
+//       console.log(err)
+//     }
+//   }
 
   
   return (<>
