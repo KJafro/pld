@@ -98,7 +98,7 @@ console.log(res)
     <button className="registerButtonSub" type="submit">Subscribe</button>
     {success && (
             <span
-              style={{ color: "green", textAlign: "center", marginTop: "40px", fontSize: "20px"}}
+              style={{ color: "green", textAlign: "center", marginTop: "10px", fontSize: "20px"}}
             >
               Endpoint Received! Push Notification will be registered soon!
              </span>
