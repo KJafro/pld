@@ -21,7 +21,7 @@ import { useIsAdmin } from './context/useAdmin'
 import Admin from './pages/admin/Admin'
 import Updates from './pages/updates/Updates'
 import Subscribe from "./pages/subscribe/Subscribe";
-
+import Push from "./pages/push/Push";
 
 
 function App() {
@@ -50,6 +50,7 @@ function App() {
           <Route exact path="/admin" element={isAdmin ? <Admin /> : <Login/>} />
           <Route exact path="/updates" element={isAdmin ? <Updates /> : <Login/>} />
           <Route exact path="/subscribe" element={<Subscribe/>} />
+          <Route exact path="/push" element={isAdmin ? <Push/> : <Login/>} />
         </Routes>
     </HashRouter>
   );

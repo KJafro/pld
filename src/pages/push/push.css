@@ -1,0 +1,17 @@
+.pushContainer {
+    height: 94vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pushBtn {
+    border-radius: 4px;
+    padding: 10px;
+    border: 0.5px solid black;
+    width: 160px;
+    background-color: rgb(59, 140, 187);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
