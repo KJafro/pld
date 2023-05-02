@@ -26,10 +26,10 @@ export default function Subscribe() {
       });
   };
 
-  addEventListener('load', async () => {
-    let sw = await navigator.serviceWorker.register('./sw.js')
-    console.log(sw)
-})
+  window.addEventListener('load', async () => {
+    let sw = await navigator.serviceWorker.register('./sw.js');
+    console.log(sw);
+  });
 
 let result = document.getElementById('result')
 async function subscribe() {
