@@ -1,5 +1,3 @@
-// console.log("Service Worker Successfully Loaded!YE");
-
 self.addEventListener('push', function (e) {
     var options = {
         body: 'Visit now!',
