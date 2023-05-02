@@ -38,7 +38,9 @@ async function subscribe() {
         userVisibleOnly: true,
         applicationServerKey: 'BOU-dlKoy3-aFElyPR4SLO8d6b4T7JvE9cAdiJJzKOiGysrvx6ddZ5FCwASvgCII1cWR4Aml3AKyRto33GSh16Q'
     })
-    result.innerText = JSON.stringify(push)
+    const endpointDiv = document.getElementById('endpointDiv')
+    let endpoint = JSON.stringify(push)
+    endpointDiv.innerHTML = endpoint
 }
 subscribe()
 
@@ -62,9 +64,9 @@ subscribe()
 //     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
 //   });
 //   console.log("Push Registered!");
-//   const endpointDiv = document.getElementById('endpointDiv')
-//   let endpoint = JSON.stringify(subscription)
-//   endpointDiv.innerHTML = endpoint
+  // const endpointDiv = document.getElementById('endpointDiv')
+  // let endpoint = JSON.stringify(subscription)
+  // endpointDiv.innerHTML = endpoint
 
 //   console.log("Sending Push!!!");
 //   await fetch("https://everydaybeing.onrender.com/subscribe", {
