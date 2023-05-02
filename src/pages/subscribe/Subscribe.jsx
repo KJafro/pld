@@ -26,65 +26,81 @@ export default function Subscribe() {
       });
   };
 
-  const publicVapidKey =
-  "BJGjGQ-Cs8cIN7s-I87gIRt8K_oA-90iz4uQT7g0XoIWSq0gOhiCN0l8WwMi-rwWU8JtrpZXZ591ujl1G0nORss";
+  addEventListener('load', async () => {
+    let sw = await navigator.serviceWorker.register('./sw.js')
+    console.log(sw)
+})
 
-if ("serviceWorker" in navigator) {
-  send().catch(err => console.error(err));
+let result = document.getElementById('result')
+async function subscribe() {
+    let sw = await navigator.serviceWorker.ready;
+    let push = await sw.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: 'BOU-dlKoy3-aFElyPR4SLO8d6b4T7JvE9cAdiJJzKOiGysrvx6ddZ5FCwASvgCII1cWR4Aml3AKyRto33GSh16Q'
+    })
+    result.innerText = JSON.stringify(push)
 }
+subscribe()
 
-async function send() {
-  console.log("Registering Worker!");
-  const register = await navigator.serviceWorker.register("/worker.js", {
-    scope: "/"
-  });
-  console.log("Service Worker Registered!");
+//   const publicVapidKey =
+//   "BJGjGQ-Cs8cIN7s-I87gIRt8K_oA-90iz4uQT7g0XoIWSq0gOhiCN0l8WwMi-rwWU8JtrpZXZ591ujl1G0nORss";
 
-  console.log("Registering Push!");
-  const subscription = await register.pushManager.subscribe({
-    userVisibleOnly: true,
-    applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
-  });
-  console.log("Push Registered!");
-  const endpointDiv = document.getElementById('endpointDiv')
-  let endpoint = JSON.stringify(subscription)
-  endpointDiv.innerHTML = endpoint
+// if ("serviceWorker" in navigator) {
+//   send().catch(err => console.error(err));
+// }
 
-  console.log("Sending Push!!!");
-  await fetch("https://everydaybeing.onrender.com/subscribe", {
-    method: "POST",
-    body: JSON.stringify(subscription),
-    headers: {
-      "content-type": "application/json"
-    }
-  });
-  console.log("Push Sent!");
-}
+// async function send() {
+//   console.log("Registering Worker!");
+//   const register = await navigator.serviceWorker.register("/worker.js", {
+//     scope: "/"
+//   });
+//   console.log("Service Worker Registered!");
 
-function urlBase64ToUint8Array(base64String) {
-  const padding = "=".repeat((4 - base64String.length % 4) % 4);
-  const base64 = (base64String + padding)
-    .replace(/\-/g, "+")
-    .replace(/_/g, "/");
+//   console.log("Registering Push!");
+//   const subscription = await register.pushManager.subscribe({
+//     userVisibleOnly: true,
+//     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
+//   });
+//   console.log("Push Registered!");
+//   const endpointDiv = document.getElementById('endpointDiv')
+//   let endpoint = JSON.stringify(subscription)
+//   endpointDiv.innerHTML = endpoint
 
-  const rawData = window.atob(base64);
-  const outputArray = new Uint8Array(rawData.length);
+//   console.log("Sending Push!!!");
+//   await fetch("https://everydaybeing.onrender.com/subscribe", {
+//     method: "POST",
+//     body: JSON.stringify(subscription),
+//     headers: {
+//       "content-type": "application/json"
+//     }
+//   });
+//   console.log("Push Sent!");
+// }
 
-  for (let i = 0; i < rawData.length; ++i) {
-    outputArray[i] = rawData.charCodeAt(i);
-  }
-  return outputArray;
-}
-  const subScribe = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axiosInstance.post("/subscribe", {
-      });
-console.log(res)
-    } catch (err) {
-      console.log(err)
-    }
-  }
+// function urlBase64ToUint8Array(base64String) {
+//   const padding = "=".repeat((4 - base64String.length % 4) % 4);
+//   const base64 = (base64String + padding)
+//     .replace(/\-/g, "+")
+//     .replace(/_/g, "/");
+
+//   const rawData = window.atob(base64);
+//   const outputArray = new Uint8Array(rawData.length);
+
+//   for (let i = 0; i < rawData.length; ++i) {
+//     outputArray[i] = rawData.charCodeAt(i);
+//   }
+//   return outputArray;
+// }
+//   const subScribe = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const res = await axiosInstance.post("/subscribe", {
+//       });
+// console.log(res)
+//     } catch (err) {
+//       console.log(err)
+//     }
+//   }
 
 
 
