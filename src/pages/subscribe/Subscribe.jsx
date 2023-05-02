@@ -27,7 +27,7 @@ export default function Subscribe() {
   };
 
   const publicVapidKey =
-  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
+  "BJGjGQ-Cs8cIN7s-I87gIRt8K_oA-90iz4uQT7g0XoIWSq0gOhiCN0l8WwMi-rwWU8JtrpZXZ591ujl1G0nORss";
 
 if ("serviceWorker" in navigator) {
   send().catch(err => console.error(err));
