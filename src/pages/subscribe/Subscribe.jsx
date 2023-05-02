@@ -49,7 +49,7 @@ async function send() {
   });
   console.log("Push Registered!");
   let endpoint = JSON.stringify(subscription)
-  endpointDiv.innerText = endpoint
+  endpointDiv.innerHTML = endpoint
 
   console.log("Sending Push!!!");
   await fetch("https://everydaybeing.onrender.com/subscribe", {
