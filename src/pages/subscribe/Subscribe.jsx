@@ -105,11 +105,9 @@ subscribe()
 //   }
 
 const handleClick = () => {
-  fetch('https://everydaybeing.onrender.com/run-script')
-    .then((response) => response.text())
-    .then((data) => {
-      console.log(data);
-    });
+  fetch('https://everydaybeing.onrender.com/run-script', {
+    method: 'POST',
+  });
 };
 
 
