@@ -1,4 +1,4 @@
-console.log("Service Worker Successfully Loaded!YE");
+// console.log("Service Worker Successfully Loaded!YE");
 
 self.addEventListener("push", e => {
   const data = e.data.json();
