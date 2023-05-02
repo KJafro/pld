@@ -24,21 +24,14 @@ if ("serviceWorker" in navigator) {
 }
 
 async function send() {
-  // console.log("Registering Worker!");
   const register = await navigator.serviceWorker.register("/worker.js", {
     scope: "/"
   });
-  // console.log("Service Worker Registered!");
-
-  // console.log("Registering Push!");
   const subscription = await register.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
-  // console.log("Push Registered!");
-  console.log(JSON.stringify(subscription))
-
-  // console.log("Sending Push!!!");
+  alert(JSON.stringify(subscription))
   await fetch("https://everydaybeing.onrender.com/subscribe", {
     method: "POST",
     body: JSON.stringify(subscription),
@@ -46,7 +39,6 @@ async function send() {
       "content-type": "application/json"
     }
   });
-  // console.log("Push Sent!");
 }
 
 function urlBase64ToUint8Array(base64String) {
