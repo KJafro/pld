@@ -92,8 +92,8 @@ console.log(res)
     <>
     <TopBar/>
     <div className="subForm">
+      <div id="endpointDiv"></div>
     <form ref={form} onSubmit={sendEmail} className="writeForm">
-    <div id="endpointDiv"></div>
     <textarea placeholder="Enter the endpoint here..." type="text" name="message" className="writeInput writeText" required></textarea><br></br>
     <button className="registerButtonSub" type="submit">Subscribe</button>
     {success && (
