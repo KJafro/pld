@@ -3,7 +3,7 @@ self.addEventListener('push', function (e) {
         body: 'Visit now!',
         icon: 'https://images.unsplash.com/photo-1580250642511-1660fe42ad58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80',
         vibrate: [100, 50, 100],
-        click_action : "www.everydaybeing.uk",
+        url: "www.everydaybeing.uk",
         data: {
             dateOfArrival: Date.now(),
             primaryKey: '2'
