@@ -10,7 +10,7 @@ export default function Push() {
   
     const handleClick = () => {
       setIsLoading(true);
-      fetch('/run-script')
+      fetch('https://everydaybeing.onrender.com/run-script')
         .then(response => response.json())
         .then(data => {
           setResult(data);
