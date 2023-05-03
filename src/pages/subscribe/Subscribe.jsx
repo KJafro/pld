@@ -46,7 +46,7 @@ subscribe()
 
 const handleClick = async () => {
   try {
-    const response = await fetch('/runScript', { method: 'POST' });
+    const response = await fetch('https://everydaybeing.onrender.com/runScript', { method: 'POST' });
     const result = await response.json();
     console.log(result);
   } catch (error) {
