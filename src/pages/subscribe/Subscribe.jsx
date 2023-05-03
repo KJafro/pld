@@ -104,11 +104,6 @@ subscribe()
 //     }
 //   }
 
-const handleClick = () => {
-  fetch('https://everydaybeing.onrender.com/run-script', {
-    method: 'POST',
-  });
-};
 
 
   return (
@@ -129,7 +124,6 @@ const handleClick = () => {
           )}
     </form>
     </div>
-    <button onClick={handleClick}>Run script</button>
     </>
   )
 }
