@@ -5,34 +5,34 @@ import TopBar from '../../components/topbar/TopBarPodcast'
 
 export default function Push() {
 
-    const [isLoading, setIsLoading] = useState(false);
-    const [result, setResult] = useState(null);
+    const [isRunning, setIsRunning] = useState(false);
+    const [error, setError] = useState(null);
   
-    const handleClick = () => {
-      setIsLoading(true);
-      fetch('https://everydaybeing.onrender.com/run-script')
-        .then(response => response.json())
-        .then(data => {
-          setResult(data);
-          setIsLoading(false);
-        })
-        .catch(error => {
-          console.error(error);
-          setIsLoading(false);
-        });
+    const handleButtonClick = async () => {
+      setIsRunning(true);
+      setError(null);
+  
+      try {
+        const response = await fetch('/run-script', { method: 'POST' });
+        if (response.ok) {
+          console.log('Script ran successfully');
+        } else {
+          setError('Error running script: ' + response.statusText);
+        }
+      } catch (err) {
+        setError('Error running script: ' + err.message);
+      }
+  
+      setIsRunning(false);
     };
+  
 
     return (
-        <>
-        <TopBar/>
         <div>
-          <button onClick={handleClick} disabled={isLoading}>
-            {isLoading ? 'Loading...' : 'Run Script'}
-          </button>
-          {result && (
-            <p>{result.success ? 'Script executed successfully' : 'An error occurred'}</p>
-          )}
-        </div>
-        </>
-      );
+        <button onClick={handleButtonClick} disabled={isRunning}>
+          {isRunning ? 'Running script...' : 'Run script'}
+        </button>
+        {error && <p>{error}</p>}
+      </div>
+    );
     }
