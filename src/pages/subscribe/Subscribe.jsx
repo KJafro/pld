@@ -44,6 +44,16 @@ async function subscribe() {
 }
 subscribe()
 
+const handleClick = async () => {
+  try {
+    const response = await fetch('/runScript', { method: 'POST' });
+    const result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 //   const publicVapidKey =
 //   "BJGjGQ-Cs8cIN7s-I87gIRt8K_oA-90iz4uQT7g0XoIWSq0gOhiCN0l8WwMi-rwWU8JtrpZXZ591ujl1G0nORss";
 
@@ -123,6 +133,7 @@ subscribe()
              </span>
           )}
     </form>
+    <button onClick={handleClick}>Run Script</button>;
     </div>
     </>
   )
