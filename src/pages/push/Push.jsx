@@ -13,7 +13,7 @@ export default function Push() {
       setError(null);
   
       try {
-        const response = await fetch('/run-script', { method: 'POST' });
+        const response = await fetch('https://everydaybeing.onrender.com/run-script', { method: 'POST' });
         if (response.ok) {
           console.log('Script ran successfully');
         } else {
