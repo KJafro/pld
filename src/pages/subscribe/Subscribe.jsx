@@ -57,14 +57,13 @@ function unsubscribePush() {
       subscription.unsubscribe()
         .then(function () {
           console.log(('Unsubscribed'));
-          console.info('Unsubscribed.');
         })
         .catch(function (error) {
           console.error(error);
         });
     })
     .catch(function (error) {
-      console.error('Failed to unsubscribe push notification.');
+      console.error('Failed to unsubscribe push notification!');
     });
   })
 }
