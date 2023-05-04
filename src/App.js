@@ -21,7 +21,6 @@ import { useIsAdmin } from './context/useAdmin'
 import Admin from './pages/admin/Admin'
 import Updates from './pages/updates/Updates'
 import Subscribe from "./pages/subscribe/Subscribe";
-import Unsubscribe from "./pages/unsubscribe/Unsubscribe";
 import Push from "./pages/push/Push";
 
 
