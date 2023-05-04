@@ -5,31 +5,38 @@ import TopBar from '../../components/topbar/TopBarPodcast'
 
 export default function Push() {
 
-    const [isRunning, setIsRunning] = useState(false);
-    const [error, setError] = useState(null);
-  
-    const handleButtonClick = async () => {
-      setIsRunning(true);
-      setError(null);
-  
-      try {
-        const response = await fetch('https://everydaybeing.onrender.com/run-script', { method: 'POST' });
-        if (response.ok) {
-          console.log('Script ran successfully');
-        } else {
-          setError('Error running script: ' + response.statusText);
-        }
-      } catch (err) {
-        setError('Error running script: ' + err.message);
+    function unsubscribePush() {
+        navigator.serviceWorker.ready
+        .then(function(registration) {
+          //Get subscription
+          registration.pushManager.getSubscription()
+          .then(function (subscription) {
+            //If no `push subscription`, then return
+            if(!subscription) {
+              alert('Unable to unregister push notification.');
+              return;
+            }
+    
+            //Unsubscribes user
+            subscription.unsubscribe()
+              .then(function () {
+                toast('Unsubscribed successfully.');
+                console.info('Push notification unsubscribed.');
+              })
+              .catch(function (error) {
+                console.error(error);
+              });
+          })
+          .catch(function (error) {
+            console.error('Failed to unsubscribe push notification.');
+          });
+        })
       }
-  
-      setIsRunning(false);
-    };
   
 
     return (
         <div>
-        <button onClick={handleButtonClick} disabled={isRunning}>
+        <button onClick={unsubscribePush}>
           {isRunning ? 'Running script...' : 'Run script'}
         </button>
         {error && <p>{error}</p>}
