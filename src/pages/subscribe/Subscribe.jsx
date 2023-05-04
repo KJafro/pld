@@ -145,7 +145,7 @@ function unsubscribePush() {
             <span
               style={{ color: "green", textAlign: "center", marginTop: "10px", fontSize: "20px"}}
             >
-              Endpoint Received! Push Notification will be registered soon! Click <Link className="unSubLink" to="/unsubscribe" onClick={unsubscribePush}>here</Link> to unsubscribe!
+              Endpoint Received! Push Notification will be registered soon! Click <Link className="unSubLink" to="/subscribe" onClick={unsubscribePush}>here</Link> to unsubscribe!
              </span>
           )}
     </form>
