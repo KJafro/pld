@@ -51,7 +51,6 @@ function App() {
           <Route exact path="/admin" element={isAdmin ? <Admin /> : <Login/>} />
           <Route exact path="/updates" element={isAdmin ? <Updates /> : <Login/>} />
           <Route exact path="/subscribe" element={<Subscribe/>} />
-          <Route exact path="/unsubscribe" element={<Unsubscribe/>} />
           <Route exact path="/push" element={isAdmin ? <Push/> : <Login/>} />
         </Routes>
     </HashRouter>

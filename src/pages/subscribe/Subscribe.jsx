@@ -45,6 +45,30 @@ async function subscribe() {
 }
 subscribe()
 
+function unsubscribePush() {
+  navigator.serviceWorker.ready
+  .then(function(registration) {
+    registration.pushManager.getSubscription()
+    .then(function (subscription) {
+      if(!subscription) {
+        setSuccess(true);
+        return;
+      }
+      subscription.unsubscribe()
+        .then(function () {
+          console.log(('Unsubscribed'));
+          console.info('Unsubscribed.');
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    })
+    .catch(function (error) {
+      console.error('Failed to unsubscribe push notification.');
+    });
+  })
+}
+
 
 //   const publicVapidKey =
 //   "BJGjGQ-Cs8cIN7s-I87gIRt8K_oA-90iz4uQT7g0XoIWSq0gOhiCN0l8WwMi-rwWU8JtrpZXZ591ujl1G0nORss";
@@ -121,7 +145,7 @@ subscribe()
             <span
               style={{ color: "green", textAlign: "center", marginTop: "10px", fontSize: "20px"}}
             >
-              Endpoint Received! Push Notification will be registered soon! Click <Link className="unSubLink" to="/unsubscribe">here</Link> to unsubscribe!
+              Endpoint Received! Push Notification will be registered soon! Click <Link className="unSubLink" to="/unsubscribe" onClick={unsubscribePush}>here</Link> to unsubscribe!
              </span>
           )}
     </form>
