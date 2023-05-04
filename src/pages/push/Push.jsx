@@ -36,7 +36,7 @@ export default function Push() {
 
     return (
         <div>
-        <button onClick={unsubscribePush}>  
+        <button onClick={unsubscribePush}>UNSUB
         </button>
       </div>
     );
