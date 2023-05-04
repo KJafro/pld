@@ -11,7 +11,7 @@ export default function Subscribe() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false);
 
-  const unSub = async () => {
+  const unSub = async (e) => {
     e.preventDefault();
     const sw = await navigator.serviceWorker.ready
     const sub = await sw.pushManager.getSubscription()
