@@ -11,13 +11,6 @@ export default function Subscribe() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false);
 
-  const unSub = async (e) => {
-    e.preventDefault();
-    const sw = await navigator.serviceWorker.ready
-    const sub = await sw.pushManager.getSubscription()
-    await sub.unsubscribe()
-  }
-
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true)
@@ -131,7 +124,6 @@ subscribe()
              </span>
           )}
     </form>
-    <button onSubmit={unSub}>Unsubscribe</button>
     </div>
     </>
   )
