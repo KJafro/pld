@@ -54,6 +54,12 @@
     padding: 4px;
 }
 
+.unSubLink {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 1024px) {
     .endpointTextarea {
         height: 20vh;

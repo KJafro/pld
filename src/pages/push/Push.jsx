@@ -5,6 +5,8 @@ import TopBar from '../../components/topbar/TopBarPodcast'
 
 export default function Push() {
 
+    const [success, setSuccess] = useState(false);
+
     function unsubscribePush() {
         navigator.serviceWorker.ready
         .then(function(registration) {
@@ -13,7 +15,7 @@ export default function Push() {
           .then(function (subscription) {
             //If no `push subscription`, then return
             if(!subscription) {
-              alert('Unable to unregister push notification.');
+              setSuccess(true);
               return;
             }
     
@@ -36,8 +38,14 @@ export default function Push() {
 
     return (
         <div>
-        <button onClick={unsubscribePush}>UNSUB
-        </button>
+        <button onClick={unsubscribePush}>UNSUB</button>
+        {success && (
+            <span
+              style={{ color: "green", textAlign: "center", marginTop: "10px", fontSize: "20px"}}
+            >
+              Successfully unregistered from push notifications!
+             </span>
+          )}
       </div>
     );
     }

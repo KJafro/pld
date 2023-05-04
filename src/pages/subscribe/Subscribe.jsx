@@ -3,6 +3,7 @@ import TopBar from '../../components/topbar/TopBar'
 import emailjs from '@emailjs/browser'
 import React, { useRef } from 'react'
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import './subscribe.css'
 
 export default function Subscribe() {
@@ -120,7 +121,7 @@ subscribe()
             <span
               style={{ color: "green", textAlign: "center", marginTop: "10px", fontSize: "20px"}}
             >
-              Endpoint Received! Push Notification will be registered soon!
+              Endpoint Received! Push Notification will be registered soon! Click <Link className="unSubLink" to="/unsubscribe">here</Link> to unsubscribe!
              </span>
           )}
     </form>
