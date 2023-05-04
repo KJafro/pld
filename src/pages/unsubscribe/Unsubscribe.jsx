@@ -15,15 +15,14 @@ export default function Unsubscribe() {
           .then(function (subscription) {
             //If no `push subscription`, then return
             if(!subscription) {
-              setSuccess(true);
+              setSuccess(false);
               return;
             }
     
             //Unsubscribes user
             subscription.unsubscribe()
               .then(function () {
-                console.log(('Unsubscribed successfully.'));
-                console.info('Push notification unsubscribed.');
+                setSuccess(true);
               })
               .catch(function (error) {
                 console.error(error);
