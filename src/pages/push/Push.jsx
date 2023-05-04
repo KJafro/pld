@@ -20,7 +20,7 @@ export default function Push() {
             //Unsubscribes user
             subscription.unsubscribe()
               .then(function () {
-                toast('Unsubscribed successfully.');
+                console.log(('Unsubscribed successfully.'));
                 console.info('Push notification unsubscribed.');
               })
               .catch(function (error) {
@@ -36,10 +36,8 @@ export default function Push() {
 
     return (
         <div>
-        <button onClick={unsubscribePush}>
-          {isRunning ? 'Running script...' : 'Run script'}
+        <button onClick={unsubscribePush}>  
         </button>
-        {error && <p>{error}</p>}
       </div>
     );
     }
