@@ -1,0 +1,68 @@
+.registerButtonSub {
+    width: 180px;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(78, 130, 190);
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.registerButtonSub:hover {
+    background-color: rgb(116, 142, 179);
+}
+
+.subForm {
+    height: 94vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.writeForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#endpointDiv {
+    /* width: 1000px; */
+}
+
+.subTitle {
+    text-align: center;
+    font-size: 22px;
+}
+
+.endpointTextarea {
+    height: 18vh;
+    font-family: "Lora";
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    border: 2px solid black;
+    outline: none;
+    width: 40vw;
+    padding: 4px;
+}
+
+.unSubLink {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1024px) {
+    .endpointTextarea {
+        height: 20vh;
+        width: 95vw;
+    }
+}
