@@ -25,6 +25,7 @@ export default function TopBar() {
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
+  
   return (
     <div className="top">
       <div className="topLeft">

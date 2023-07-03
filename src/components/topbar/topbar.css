@@ -101,6 +101,12 @@
     margin-left: 15px;
 }
 
+.logoTopLeft {
+    height: 20px;
+    width: 50px;
+    object-fit: cover;
+}
+
 @media only screen and (max-width: 1024px) {
     .nav-btn {
         display: flex;
