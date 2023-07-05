@@ -9,7 +9,7 @@ export default function Header() {
         </div> */}
         <div className="undertext">
           <div className="overtext">
-        <img className ="headerImg" alt=""/>
+        <img className="headerImg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA"/>
         </div>
         </div>
     </div>

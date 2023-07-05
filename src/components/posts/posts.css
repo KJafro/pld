@@ -2,7 +2,8 @@
     flex: 9;
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
+    /* margin: 20px; */
+    /* margin-left: 10px; */
 }
 
 
@@ -10,5 +11,11 @@
     .posts {
     margin: 0;
     margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 1900px) {
+    .posts {
+        /* margin-left: 40px; */
     }
 }
