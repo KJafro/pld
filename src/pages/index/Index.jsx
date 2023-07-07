@@ -70,9 +70,9 @@ function urlBase64ToUint8Array(base64String) {
                 })
                 .start();
               }}/>
-              <p>We live our lives in a continuous now. You cannot go even two seconds into the past
-                or even two seconds into the future.</p>
-                <p>Our being is always now.</p>
+              <p>Welcome to a guide to the happiness within.</p>
+              <p>Using simple examples though our podcasts and blogs, we bring to life how an understanding of Being can improve our mental health and performance.</p>
+                {/* <p>Our being is always now.</p> */}
               <Link to="/blog"><button className="blogbtn" type="submit">Blog</button></Link>
               <Link to="/podcast"><button className="podcastbtn" type="submit">Podcast</button></Link>
               <div className="typewriter">
