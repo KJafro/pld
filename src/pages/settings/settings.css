@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url('../../../public/hlo.otf') format('truetype');
+  }
+  
+
 .settings {
     display: flex;
     padding-top: 80px;
-    font-family: Lora;
+    font-family: Helvetica Light;
     height: 94vh;
     background-image: url(../../../public/assets/img15.jpg);
     background-position: center;

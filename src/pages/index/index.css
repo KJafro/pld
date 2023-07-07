@@ -1,5 +1,12 @@
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url('../../../public/hlo.otf') format('truetype');
+}
+  
   .container {
     height: 100vh;
+    font-family: Helvetica Light;
+    background-color: rgb(218,218,218);
   }
 
   .video-bg {
@@ -11,8 +18,10 @@
     display: block;
     position: relative;
     /* background-image: url(./bgimgs.jpg); */
-    background-image: url(../../../public/assets/img8.jpg);
+    /* background-image: url(https://res.cloudinary.com/dyvsjxtxa/image/upload/v1688734881/everydaybeing/623907e6-d777-4188-bd39-b3093e5c33b7_ffft1e.jpg); */
     background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
   }
   
 
@@ -22,9 +31,9 @@
     left: 50%;
     transform: translate( -50%, -50% );
     text-align: center;
-    color: white;
+    color: black;
     font-weight: bold;
-    font-family: Lora;
+    font-family: Helvetica Light;
   }
 
 .caption h1 {
@@ -44,9 +53,9 @@
 
 .blogbtn {
   margin-top: 15px;
-  padding: 10px;
+  padding: 9px;
   cursor: pointer;
-  color: white;
+  color: black;
   background-color: rgb(84, 149, 199);
   border-radius: 10px;
   font-weight: bold;
@@ -59,6 +68,8 @@
   width: 150px;
   font-size: 1em;
   border: none;
+  margin-bottom: 100px;
+  font-weight: bold;
 }
 
 @keyframes blogbtn {
@@ -68,9 +79,9 @@
 
 .podcastbtn {
   margin-top: 15px;
-  padding: 10px;
+  padding: 9px;
   cursor: pointer;
-  color: white;
+  color: black;
   background-color: rgb(84, 149, 199);
   width: 150px;
   border-radius: 10px;
@@ -82,6 +93,7 @@
   animation-fill-mode: forwards;
   font-size: 1em;
   border: none;
+  font-weight: bold;
 }
 
 @keyframes podcastbtn {
@@ -91,16 +103,16 @@
 
 
 .blogbtn:hover {
-  background-color: rgb(65, 141, 199);
+  background-color: rgb(125, 166, 198);
 }
 
 .podcastbtn:hover {
-  background-color: rgb(65, 141, 199);
+  background-color: rgb(125, 166, 198);
 }
 
 .typewriter {
   font-weight: bold;
-  font-family: Lora;
+  font-family: Helvetica Light ;
   max-width: 500px;
 }
 

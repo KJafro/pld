@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url('../../../public/hlo.otf') format('truetype');
+  }
+
 .write {
     padding-top: 50px;
     display: flex;
@@ -80,7 +85,7 @@ opacity: 1;
     width: 80vw;
     border-radius: 10px;
     margin-top: 10px;
-    font-family: "Lora";
+    font-family: "Helvetica Light";
     border: 2px solid rgb(14, 14, 14);
     outline: none;
 }
@@ -130,7 +135,7 @@ opacity: 1;
 }
 
 .errortxt {
-    font-family: Lora;
+    font-family: Helvetica Light;
     margin-top: 10px;
     font-weight: 500;
 }

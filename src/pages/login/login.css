@@ -1,7 +1,12 @@
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url('../../../public/hlo.otf') format('truetype');
+  }
+
 .login {
     height: 100vh;
     display: flex;
-    font-family: Lora;
+    font-family: Helvetica Light;
     background-color: rgb(235, 235, 235);
 }
 

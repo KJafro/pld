@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url('../../../public/hlo.otf') format('truetype');
+  }
+
 .registerButtonSub {
     width: 180px;
     padding: 10px;
@@ -40,11 +45,13 @@
 .subTitle {
     text-align: center;
     font-size: 22px;
+    font-family: "Helvetica Light";
 }
 
 .endpointTextarea {
     height: 18vh;
-    font-family: "Lora";
+    font-family: "Helvetica Light";
+    text-align: center;
     border-radius: 10px;
     margin-top: 10px;
     font-size: 20px;

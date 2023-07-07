@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url('../../../public/hlo.otf') format('truetype');
+  }
+
+  .top {
+    font-family: Helvetica Light;
+  }

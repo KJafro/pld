@@ -1,14 +1,17 @@
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url('../../../public/hlo.otf') format('truetype');
+  }
+
 .contactContainer {
     display: flex;
     height: 94vh;
+    font-family: Helvetica Light;
 }
-
 
 .write {
     margin-left: 100px;
 }
-
-
 
 .rightContact {
     flex: 1;
@@ -44,14 +47,11 @@
     text-align: center;
     color: white;
     font-size: 50px;
-    font-family: Lora;
     font-size: 4em;
-    font-family: Lora;
 }
 
 .writePContact {
     font-size: 22px;
-    font-family: Lora;
 }
 
 

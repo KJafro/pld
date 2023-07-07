@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url('../../../public/hlo.otf') format('truetype');
+  }
+
+  .top {
+    font-family: Helvetica Light
+  }
+
 .topListItemPodcast {
     margin-right: 20px;
     font-size: 18px;

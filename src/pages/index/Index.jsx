@@ -2,6 +2,7 @@ import "./index.css"
 // import BgVideo from "./../index/index.mp4"
 import {Link} from "react-router-dom";
 import { useEffect } from "react";
+import IndexPic from './indexpic.jpg'
 import Typewriter from 'typewriter-effect'
 
 var app = document.getElementById('app');
@@ -55,23 +56,11 @@ function urlBase64ToUint8Array(base64String) {
   }
   return outputArray;
 }
-//   const subScribe = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const res = await axiosInstance.post("/subscribe", {
-//       });
-// console.log(res)
-//     } catch (err) {
-//       console.log(err)
-//     }
-//   }
-
-  
   return (<>
         <div className="container">
         <div className="video-bg">
-          {/* <video src={BgVideo} autoPlay={true} controls={false} muted playsInline class="video-bg" type="video/mp4"/> */}
         <div className="caption">
+          <img src={IndexPic} style={{height: "200px"}}/>
                             <Typewriter 
               onInit={(typewriter) => {
                 typewriter.typeString('<span style="font-size:40px;">Everyday Being')

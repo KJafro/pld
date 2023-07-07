@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url('../../../public/hlo.otf') format('truetype');
+  }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Helvetica Light;
 }
 
 .post {
@@ -52,7 +58,6 @@
 }
 
 .postCat {
-    font-family: 'Varela Round', sans-serif;
     font-size: 11px;
     color: #be9656;
     line-height: 20px;
@@ -62,7 +67,6 @@
 }
 
 .postTitle {
-    font-family: 'Josefin Sans', sans-serif;
     font-size: 22px;
     font-weight: 700;
     margin-top: 15px;
@@ -70,7 +74,6 @@
 }
 
 .postDate {
-    font-family: 'Lora', serif;
     font-style: italic;
     font-size: 13px;
     color: #2e2e2e;
@@ -79,7 +82,6 @@
 }
 
 .postBy {
-    font-family: 'Lora', serif;
     font-style: italic;
     font-size: 13px;
     color: #2e2e2e;
@@ -87,7 +89,6 @@
 }
 
 .postDesc {
-    font-family: 'Varela Round', sans-serif;
     height: 50px;
     padding-left: 5px;
     font-size: 14px;

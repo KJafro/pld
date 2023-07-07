@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url('../../../public/hlo.otf') format('truetype');
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +11,8 @@
 
 .podcast {
     width: auto;
-    /* cursor: pointer; */
     overflow: hidden;
+    font-family: Helvetica Light;
 }
 
 .podcastFront {
@@ -57,7 +62,6 @@
 }
 
 .podcastCat {
-    font-family: 'Varela Round', sans-serif;
     font-size: 11px;
     color: #be9656;
     line-height: 20px;
@@ -67,7 +71,6 @@
 }
 
 .podcastTitle {
-    font-family: 'Josefin Sans', sans-serif;
     font-size: 24px;
     font-weight: 700;
     margin-top: 15px;
@@ -76,7 +79,6 @@
 }
 
 .podcastDate {
-    font-family: 'Lora', serif;
     font-style: italic;
     font-size: 13px;
     color: #2e2e2e;
@@ -86,7 +88,6 @@
 }
 
 .podcastDesc {
-    font-family: 'Varela Round', sans-serif;
     height: 50px;
     padding-left: 5px;
     font-size: 14px;
