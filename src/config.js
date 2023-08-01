@@ -1,5 +1,5 @@
 import axios from "axios"
 
 export const axiosInstance = axios.create({
-    baseURL: "change"
+    baseURL: "https://misty-silence-6581.fly.dev/api/"
 })
