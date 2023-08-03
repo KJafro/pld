@@ -1,6 +1,7 @@
 import "./index.css"
 // import BgVideo from "./../index/index.mp4"
 import {Link} from "react-router-dom";
+import Axios from 'axios'
 import { useEffect } from "react";
 import IndexPic from './indexpic.jpg'
 import Typewriter from 'typewriter-effect'
@@ -16,6 +17,11 @@ export default function Index() {
   useEffect(() => {
     document.title = "Everyday Being | Home"
   }, []);
+
+  useEffect(() => {
+    Axios.get('https://misty-silence-6581.fly.dev/api/posts')
+    .then(res => console.log(res.data))
+  }, [])
 
   const publicVapidKey =
   "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
