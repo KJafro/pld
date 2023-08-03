@@ -20,7 +20,6 @@ export default function Index() {
 
   useEffect(() => {
     Axios.get('https://misty-silence-6581.fly.dev/api/posts')
-    .then(res => console.log(res.data))
   }, [])
 
   const publicVapidKey =
