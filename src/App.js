@@ -11,7 +11,7 @@ import Success from "./pages/success/Success"
 import ContactSuccess from "./pages/success/ContactSuccess"
 import Podcast from "./pages/podcast/Podcast";
 import SinglePodcast from "./pages/singlePodcast/SinglePodcast";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useContext } from 'react';
 import { Context } from "./context/Context"
 import Contact from './pages/contact/Contact';
@@ -29,7 +29,7 @@ function App() {
   const isAdmin  = useIsAdmin()
 
   return (
-<HashRouter> 
+<BrowserRouter> 
         <Routes>
           <Route exact path="/" element={<Index/>} />
           <Route exact path="/KurtKid" element={<KurtKid/>} />
@@ -52,7 +52,7 @@ function App() {
           <Route exact path="/subscribe" element={<Subscribe/>} />
           <Route exact path="/push" element={isAdmin ? <Push/> : <Login/>} />
         </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

@@ -7,13 +7,13 @@ import TopBarPodcast from "../../components/topbar/TopBarPodcast"
 
 export default function Podcast({podcast}) {
   let moment = require ('moment');
+  const cleanedTitle = podcast.title.replace(/%/g, "").replace(/\s+/g, "-");
 
-  // const PF = "http://localhost:5000/images/"
   return (
 <div className="podcastFront">
       {podcast.photo && (
         // <img class="postImg" src={PF + post.photo/} alt="" /> 
-        <Link to = {`/podcast/${podcast._id}`} className="links"><SpotifyEmbed class="podcastImg" src={podcast.photo} /></Link>
+        <Link to={`/podcast/${cleanedTitle}`} className="links"><SpotifyEmbed class="podcastImg" src={podcast.photo} /></Link>
       )}
         <div className="podcastInfo">
             {/* <div className="postCats">{
@@ -22,7 +22,7 @@ export default function Podcast({podcast}) {
               ))
             }
             // </div> */}
-            <Link to = {`/podcast/${podcast._id}`} className="link">
+            <Link to={`/podcast/${cleanedTitle}`} className="link">
             <p className="podcastTitle">{podcast.title}
             </p>
             <p className="podcastDate">{moment(podcast.createdAt).format('Do MMMM YYYY | h:mm a')}</p>

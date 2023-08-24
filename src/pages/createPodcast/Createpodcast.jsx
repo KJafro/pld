@@ -17,6 +17,14 @@ export default function Createpodcast() {
   const { user } = useContext(Context)
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [dash, setDash] = useState(false)
+  
+  const newPodcast = {
+    username: user.username,
+    title,
+    desc,
+    photo
+  };
 
   useEffect(() => {
     document.title = "Everyday Being | Create Podcast"
@@ -27,33 +35,19 @@ export default function Createpodcast() {
     setLoading(true)
     if(title.length===0||desc.length===0||photo.length===0){
       setError(true)
-    }
-    const newPodcast = {
-      username: user.username,
-      title,
-      desc,
-      photo
-    };
-    if (file) {
-      const data = new FormData();
-      const filename = Date.now() + file.name;
-      data.append("name", filename);
-      data.append("file", file);
-      newPodcast.photo = filename;
-      try {
-        await axiosInstance.post("/upload", data);
-      } catch (err) {
-
-      }
-    }
-    try {
-      const res = await axiosInstance.post("/podcasts", newPodcast);
-      // window.location.replace("https://everydaybeingfront.onrender.com/post/" + res.data._id);
-      window.location.replace("/#/podcast/");
-    } catch (err) {
       setLoading(false)
+    } else if (title.includes('-')) {
+      setError(false)
+      setDash(true)
+      setLoading(false)
+    } else {
+      const res = await axiosInstance.post("/podcasts", newPodcast);
+      window.location.replace("/#/podcast/");
+      setDash(false)
+      setLoading(true)
+      setError(false)
     }
-  };
+  }
 
 
   return (
@@ -87,6 +81,9 @@ export default function Createpodcast() {
                 <button className="writeSubmit" type="submit">{loading ? ("Adding Podcast...") : "Submit"}</button>
                 {error?
           <label className="errortxt" style={{ color: "red", textAlign: "center", marginTop: "20px", fontSize: "20px" }}>Please fill all available fields</label>:""}
+                {dash?
+          <label className="errortxt" style={{ color: "red", textAlign: "center", marginTop: "20px", fontSize: "20px" }}>You can't use a dash/hyphen in the title</label>:""}
+          
             </div>
         </form>
     </div>
