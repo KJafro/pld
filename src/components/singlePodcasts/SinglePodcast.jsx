@@ -19,6 +19,7 @@ export default function SinglePodcasts() {
   const [desc, setDesc] = useState("")
   const [updateMode, setUpdateMode] = useState(false)
   let moment = require ('moment');
+  console.log(path)
 
   useEffect(() => {
     const getPodcast = async () => {
@@ -28,7 +29,8 @@ export default function SinglePodcasts() {
       setDesc(res.data.desc)
     };
     getPodcast()
-  },[path])
+  }, [path])
+  
   useEffect(() => {
     document.title = `Everyday Being | ${podcast.title}`
   }, []);

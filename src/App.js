@@ -40,7 +40,7 @@ function App() {
           <Route path="/write" element={isAdmin ? <Write /> : <Admin/>} />
           <Route path="/settings" element={user ? <Settings/> : <Login/>} />
           <Route path="/post/:postId" element={<Single/>} />
-          <Route path="/podcast/:podcastId" element={<SinglePodcast/>} />
+          <Route path="/podcast/:title" element={<SinglePodcast/>} />
           <Route exact path="/about" element={<About/>} />
           <Route exact path="/success" element={<Success/>} />
           <Route exact path="/contact" element={<Contact/>} />
