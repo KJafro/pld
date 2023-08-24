@@ -5,13 +5,14 @@ import LazyLoad from 'react-lazy-load';
 
 export default function Post({post}) {
   let moment = require ('moment');
+  const cleanedTitle = post.title.replace(/%/g, "").replace(/\s+/g, "-");
 
   // const PF = "http://localhost:5000/images/"
   return (
 <div className="postFront">
       {post.photo && (
         // <img class="postImg" src={PF + post.photo/} alt="" />
-        <Link to = {`/post/${post._id}`} className="link"><LazyLoad offset={300}><img class="postImg" src={post.photo} alt="" /></LazyLoad></Link>
+        <Link to = {`/post/${cleanedTitle}`} className="link"><LazyLoad offset={300}><img class="postImg" src={post.photo} alt="" /></LazyLoad></Link>
       )}
         <div className="postInfo">
             {/* <div className="postCats">{
@@ -20,7 +21,7 @@ export default function Post({post}) {
               ))
             }
             // </div> */}
-            <Link to = {`/post/${post._id}`} className="link">
+            <Link to = {`/post/${cleanedTitle}`} className="link">
             <span className="postTitle">{post.title}
             </span>
             </Link>

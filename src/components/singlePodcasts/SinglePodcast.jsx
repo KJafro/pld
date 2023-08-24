@@ -39,7 +39,7 @@ export default function SinglePodcasts() {
     try {
       await axiosInstance.delete(`/podcasts/${podcast._id}`, {
       data: { username: user.username },});
-      window.location.replace("/#/podcast");
+      window.location.replace("/podcast");
     } catch (err) {
 
     }
