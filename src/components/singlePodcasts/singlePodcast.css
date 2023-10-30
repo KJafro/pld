@@ -1,147 +1,163 @@
 @font-face {
-    font-family: 'Helvetica Light';
-    src: url('../../../public/hlo.otf') format('truetype');
-  }
+  font-family: "Helvetica Light";
+  src: url("../../../public/hlo.otf") format("truetype");
+}
 
 .singlePodcast {
-    flex: 9;
-    width: 100vw;
-    margin: auto;
-    font-family: Helvetica Light;
+  flex: 9;
+  width: 100vw;
+  margin: auto;
+  font-family: Helvetica Light;
 }
 
 .singlePodcastWrapper {
-    padding-right: 0;
-    display: flex;
-    flex-direction: column;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .singlePodcastImg {
-    display: flex;
-    width: 100%;
-    height: 300px;
-    border-radius: 0px;
-    object-fit: cover;
-    justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  border-radius: 0px;
+  object-fit: cover;
+  justify-content: center;
 }
 
 .singlePodcastAuthor {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .singlePodcastDate {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .singlePodcastTitle {
-    text-align: center;
-    margin: 10px;
-    font-size: 28px;
+  text-align: center;
+  margin: 10px;
+  font-size: 28px;
 }
 
 .singlePodcastTitleInput {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 28px;
-    text-align: center;
-    border: none;
-    color: gray;
-    border-bottom: 1px solid lightgray;
-    border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 28px;
+  text-align: center;
+  border: none;
+  color: gray;
+  border-bottom: 1px solid lightgray;
+  border-radius: 5px;
 }
 
 .singlePodcastTitleInput:focus {
-    outline: none;
+  outline: none;
 }
 
 .singlePodcastEdit {
-    float: right;
-    font-size: 16px;
-    margin-right: 10px;
+  float: right;
+  font-size: 16px;
+  margin-right: 10px;
 }
 
 .singlePodcastIcon {
-    margin-right: 10px;
-    cursor: pointer;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .singlePodcastIcon:first-child {
-    color: teal;
+  color: teal;
 }
 
 .singlePodcastIcon:last-child {
-    color: tomato;
+  color: tomato;
 }
 
 .singlePodcastInfo {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-    color: rgb(25, 25, 26);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: rgb(25, 25, 26);
 }
 
-
 .singlePodcastDesc {
-    color: #080808;
-    font-size: 18px;
-    line-height: 25px;
-    margin-left: 10px;
-    margin-top: 10px;
-    white-space: pre-line;
+  color: #080808;
+  font-size: 18px;
+  line-height: 25px;
+  margin-left: 10px;
+  margin-top: 10px;
+  white-space: pre-line;
 }
 
 .singlePodcastDesc::first-letter {
-    font-size: 22px;
-    font-weight: 600;
+  font-size: 22px;
+  font-weight: 600;
 }
 
-
 .singlePodcastDescInput {
-    border: none;
-    color: #666;
-    font-size: 18px;
-    line-height: 25px;
-    height: 200px;
-    border-radius: 5px;
-    margin-top: 10px;
-    padding: 5px;
+  border: none;
+  color: #666;
+  font-size: 18px;
+  line-height: 25px;
+  height: 200px;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px;
 }
 
 .singlePodcastDescInput:focus {
-    outline: none;
+  outline: none;
 }
 
 .singlePodcastButton {
-    width: 100px;
-    border: none;
-    background-color: teal;
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: center;
-    margin-top: 20px;
+  width: 100px;
+  border: none;
+  background-color: teal;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 20px;
 }
 
 .singlePodcastButton:hover {
-    background-color: rgb(91, 179, 179);
+  background-color: rgb(91, 179, 179);
 }
 
 @media only screen and (min-width: 1024px) {
-    .singlePodcast {
-        width: 80vw;
-    }
+  .singlePodcast {
+    width: 80vw;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-
-    .singlePodcastDesc {
-        font-size: 14px;
-        line-height: 30px;
-        margin-left: 10px;
-        margin-top: 10px;
-        white-space: pre-line;
-    }
+  .singlePodcast {
+    width: 95vw;
+  }
+  .singlePodcastDesc {
+    font-size: 14px;
+    line-height: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    white-space: pre-line;
+  }
+  .singlePodcastTitle {
+    font-size: 22px;
+  }
+  .singlePodcastAuthor {
+    font-size: 14px;
+  }
+  .singlePodcastDate {
+    font-size: 14px;
+  }
+  .singlePodcastInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }
-
